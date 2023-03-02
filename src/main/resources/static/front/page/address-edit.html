@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no,minimal-ui">
+        <title>Foodaroo</title>
+        <link rel="icon" href="./../images/favicon.ico">
+        <!--不同屏幕尺寸根字体设置-->
+        <script src="./../js/base.js"></script>
+        <!--element-ui的样式-->
+        <link rel="stylesheet" href="../../backend/plugins/element-ui/index.css" />
+        <!--引入vant样式-->
+        <link rel="stylesheet" href="../styles/vant.min.css"/>
+        <!-- 引入样式  -->
+        <link rel="stylesheet" href="../styles/index.css" />
+        <!--本页面内容的样式-->
+        <link rel="stylesheet" href="./../styles/address-edit.css" />
+    </head>
+    <body>
+        <div id="address_edit" class="app">
+            <div class="divHead">
+                <div class="divTitle">
+                    <i class="el-icon-arrow-left" @click="goBack"></i>{{title}}
+                </div>
+            </div>
+            <div class="divContent">
+                <div class="divItem">
+                   <span>Contact:</span>
+                    <span class="spanChecked" @click="form.sex = '1'">
+                    <i :class="{iActive:form.sex === '1'}"></i>
+                    Mr.
+                   </span>
+                    <span class="spanChecked" @click="form.sex = '0'">
+                    <i :class="{iActive:form.sex === '0'}"></i>
+                    Ms.
+                </span>
+                   <el-input placeholder=" Please fill your salutation" v-model="form.consignee"  maxlength='10' class="inputUser"/></el-input>
+
+                </div>
+                <div class="divItem">
+                    <span>Phone:</span>
+                    <el-input placeholder=" Please fill your phone number" v-model="form.phone"  maxlength='20' style="width: calc(100% - 80rem);"/></el-input>
+                </div>
+                <div class="divItem">
+                    <span>Address:</span>
+                    <el-input placeholder=" Please enter the delivery address" v-model="form.detail"  maxlength='140' style="width: calc(100% - 80rem);"/></el-input>
+                </div>
+                <div class="divItem ">
+                    <span>Label:</span>
+                    <span v-for="(item,index) in labelList" :key="index" @click="form.label = item;activeIndex = index" :class="{spanItem:true,spanActiveSchool:activeIndex === index}">{{item}}</span>
+                </div>
+                <div class="divSave" @click="saveAddress">Save Address</div>
+                <div class="divDelete" @click="deleteAddress" v-if="id">Delete Address</div>
+            </div>
+        </div>
+        <!-- 开发环境版本,包含了有帮助的命令行警告 -->
+        <script src="../../backend/plugins/vue/vue.js"></script>
+        <!-- 引入组件库 -->
+        <script src="../../backend/plugins/element-ui/index.js"></script>
+        <!-- 引入vant样式 -->
+        <script src="./../js/vant.min.js"></script>
+        <script src="./../js/common.js"></script>
+        <script src="./../api/address.js"></script>
+        <!-- 引入axios -->
+        <script src="../../backend/plugins/axios/axios.min.js"></script>
+        <script src="./../js/request.js"></script>
+        <script>
+            new Vue({
+                el:"#address_edit",
+                data(){
+                    return {
+                        title:'New Delivery Address',
+                        form:{
+                            consignee:'',//联系人
+                            phone:undefined,//手机号
+                            sex:'1',//0表示女 1 表示男
+                            detail:'',//收货地址
+                            label:'Company',//标签
+                        },
+                        labelList:[
+                            'None','Company','Home','School'
+                        ],
+                        id:undefined,
+                        activeIndex :0
+                    }
+                },
+                computed:{},
+                created(){
+                    this.initData()
+                },
+                mounted(){
+                },
+                methods:{
+                    goBack(){
+                        history.go(-1)
+                    },
+                    async initData(){
+                        const params = parseUrl(window.location.search)
+                        this.id = params.id
+                        if(params.id){
+                            this.title = 'Edit Delivery Address'
+                            const res = await addressFindOneApi(params.id)
+                            if(res.code === 1){
+                                this.form = res.data
+                            }else{
+                                this.$notify({ type:'warning', message:res.msg});
+                            }
+                        }
+                    },
+                    async saveAddress(){
+                        const form = this.form
+                        if(!form.consignee){
+                            this.$notify({ type:'warning', message:'Please enter a contact'});
+                            return
+                        }
+                        if(!form.phone){
+                            this.$notify({ type:'warning', message:'Please enter phone number'});
+                            return
+                        }
+                        if(!form.detail){
+                            this.$notify({ type:'warning', message:'Please enter the delivery address'});
+                            return
+                        }
+                        const reg = /^1[3|4|5|7|8][0-9]{9}$/
+                        if(!reg.test(form.phone)){
+                            this.$notify({ type:'warning', message:'Invalid mobile phone number'});
+                            return
+                        }
+                        let res= {}
+                        if(this.id){
+                            res = await updateAddressApi(this.form)
+                        }else{
+                            res = await addAddressApi(this.form)
+                        }
+
+                        if(res.code === 1){
+                            window.requestAnimationFrame(()=>{
+                                window.location.replace('/front/page/address.html')
+                            })
+                        }else{
+                            this.$notify({ type:'warning', message:res.msg});
+                        }
+                    },
+                    deleteAddress(){
+                        this.$dialog.confirm({
+                            title: 'Confirm Deletion',
+                            message: 'Are you sure you want to delete the current address？',
+                        })
+                        .then( async () => {
+                            const res = await deleteAddressApi({ids:this.id })
+                            if(res.code === 1){
+                                window.requestAnimationFrame(()=>{
+                                    window.location.replace('/front/page/address.html')
+                                })
+                            }else{
+                                this.$notify({ type:'warning', message:res.msg});
+                            }
+                        })
+                        .catch(() => {
+                        });
+                    },
+                }
+            })
+            </script>
+    </body>
+</html>
