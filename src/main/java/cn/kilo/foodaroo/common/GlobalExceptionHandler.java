@@ -7,11 +7,22 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.sql.SQLIntegrityConstraintViolationException;
 
+/**
+ * Global Exception Handler
+ *
+ * @author kilo
+ * @version 0.0.1-SNAPSHOT
+ */
 @RestControllerAdvice
 @ResponseBody
 @Slf4j
 public class GlobalExceptionHandler {
 
+    /**
+     * Handler for SQL Integrity Exception
+     * @param ex
+     * @return
+     */
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
     public Result sqlIntegrityConstraintViolationExceptionHandler(SQLIntegrityConstraintViolationException ex){
         log.info(ex.fillInStackTrace().toString());

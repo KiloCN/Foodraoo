@@ -3,19 +3,19 @@ package cn.kilo.foodaroo.controller;
 import cn.kilo.foodaroo.common.Result;
 import cn.kilo.foodaroo.pojo.Employee;
 import cn.kilo.foodaroo.service.EmployeeService;
+import cn.kilo.foodaroo.util.StringUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * The EmployeeController class handles HTTP requests related to employee management.
@@ -48,7 +48,7 @@ public class EmployeeController {
         }
         String md5Password = DigestUtils.md5DigestAsHex(employee.getPassword().getBytes(StandardCharsets.UTF_8));
         LambdaQueryWrapper<Employee> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(Employee::getUsername, employee.getUsername());
+        wrapper.eq(Employee::getUsername, employee.getUsername().trim());
         Employee targetEmp = employeeService.getOne(wrapper);
         if (targetEmp == null) {
             return Result.error("The username does not exist, please register");
@@ -91,6 +91,8 @@ public class EmployeeController {
         Long creatorEmployeeId = (Long) request.getSession().getAttribute("employeeId");
         String defaultPassword = DigestUtils.md5DigestAsHex("123456".getBytes(StandardCharsets.UTF_8));
 
+        employee.setUsername(employee.getUsername().trim());
+        employee.setName(employee.getName().trim());
         employee.setPassword(defaultPassword);
         employee.setCreateTime(LocalDateTime.now());
         employee.setUpdateTime(LocalDateTime.now());
@@ -99,5 +101,28 @@ public class EmployeeController {
 
         employeeService.save(employee);
         return Result.success("Save employee successfully");
+    }
+
+
+    /**
+     * Get employee information list through pagination query
+     * @param page
+     * @param pageSize
+     * @param name
+     * @return
+     */
+    @GetMapping("/page")
+    public Result<Page<Employee>> getPage(@RequestParam("page") int page,
+                                          @RequestParam("pageSize")int pageSize, String name) {
+        if(name != null){
+            name = name.trim();
+        }
+        Page pageInfo = new Page(page, pageSize);
+        LambdaQueryWrapper<Employee> queryWrapper = new LambdaQueryWrapper();
+        queryWrapper.like(StringUtil.isNotEmpty(name), Employee::getUsername, name);
+        queryWrapper.orderByDesc(Employee::getUpdateTime);
+
+        Page pageResult = employeeService.page(pageInfo, queryWrapper);
+        return Result.success(pageResult);
     }
 }
