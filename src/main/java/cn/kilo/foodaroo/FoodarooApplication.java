@@ -14,7 +14,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  */
 @SpringBootApplication
 @ServletComponentScan
-public class FoodarooApplication {
+public class  FoodarooApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(FoodarooApplication.class, args);

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
 
 /**
  * The EmployeeController class handles HTTP requests related to employee management.
@@ -76,5 +77,27 @@ public class EmployeeController {
     public Result<String> logout(HttpServletRequest request) {
         request.getSession().removeAttribute("employeeId");
         return Result.success("Logout successfully");
+    }
+
+
+    /**
+     * Save A new Employee info
+     * @param employee the employee info that need to be save
+     * @return
+     */
+    @PostMapping
+    public Result<String> saveEmployee(HttpServletRequest request, @RequestBody Employee employee){
+
+        Long creatorEmployeeId = (Long) request.getSession().getAttribute("employeeId");
+        String defaultPassword = DigestUtils.md5DigestAsHex("123456".getBytes(StandardCharsets.UTF_8));
+
+        employee.setPassword(defaultPassword);
+        employee.setCreateTime(LocalDateTime.now());
+        employee.setUpdateTime(LocalDateTime.now());
+        employee.setCreateUser(creatorEmployeeId);
+        employee.setUpdateUser(creatorEmployeeId);
+
+        employeeService.save(employee);
+        return Result.success("Save employee successfully");
     }
 }
