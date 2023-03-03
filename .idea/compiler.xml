@@ -8,14 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="foodaroo" />
+        <module name="Foodraoo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="foodaroo" target="1.8" />
+      <module name="Foodraoo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Foodraoo" options="-parameters" />
       <module name="foodaroo" options="-parameters" />
     </option>
   </component>

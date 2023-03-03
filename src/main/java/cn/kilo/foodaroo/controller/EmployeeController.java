@@ -123,6 +123,9 @@ public class EmployeeController {
         queryWrapper.orderByDesc(Employee::getUpdateTime);
 
         Page pageResult = employeeService.page(pageInfo, queryWrapper);
+        log.info(pageResult.getRecords().toString());
         return Result.success(pageResult);
     }
+
+
 }

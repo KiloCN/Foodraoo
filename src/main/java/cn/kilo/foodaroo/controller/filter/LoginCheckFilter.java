@@ -2,7 +2,6 @@ package cn.kilo.foodaroo.controller.filter;
 
 import cn.kilo.foodaroo.common.Result;
 import com.alibaba.fastjson.JSON;
-import jdk.nashorn.internal.ir.debug.JSONWriter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
