@@ -2,6 +2,7 @@ package cn.kilo.foodaroo.pojo;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
  * @author kilo
  * @version 0.0.1-SNAPSHOT
  */
+@Component
 @Data
 public class Employee {
 

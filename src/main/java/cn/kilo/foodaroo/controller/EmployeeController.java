@@ -128,4 +128,25 @@ public class EmployeeController {
     }
 
 
+    /**
+     * Upate Employee info
+     * @param request
+     * @param employee
+     * @return
+     */
+    @PutMapping()
+    public Result<String> updateEmployee(HttpServletRequest request, @RequestBody Employee employee){
+        Long updaterId = (Long) request.getSession().getAttribute("employeeId");
+        employee.setUpdateUser(updaterId);
+        employee.setUpdateTime(LocalDateTime.now());
+
+        boolean updateResult = employeeService.updateById(employee);
+        if(updateResult){
+            return Result.success("Update Employee info successfully");
+        }else{
+            return Result.error("Update Employee info error");
+
+        }
+    }
+
 }
