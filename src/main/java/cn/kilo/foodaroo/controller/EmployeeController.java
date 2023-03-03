@@ -1,6 +1,7 @@
 package cn.kilo.foodaroo.controller;
 
 import cn.kilo.foodaroo.common.Result;
+import cn.kilo.foodaroo.common.ThreadLocalUserId;
 import cn.kilo.foodaroo.pojo.Employee;
 import cn.kilo.foodaroo.service.EmployeeService;
 import cn.kilo.foodaroo.util.StringUtil;
@@ -89,15 +90,14 @@ public class EmployeeController {
     public Result<String> saveEmployee(HttpServletRequest request, @RequestBody Employee employee){
 
         Long creatorEmployeeId = (Long) request.getSession().getAttribute("employeeId");
+        ThreadLocalUserId.setUserId(creatorEmployeeId);
         String defaultPassword = DigestUtils.md5DigestAsHex("123456".getBytes(StandardCharsets.UTF_8));
 
         employee.setUsername(employee.getUsername().trim());
         employee.setName(employee.getName().trim());
         employee.setPassword(defaultPassword);
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setCreateUser(creatorEmployeeId);
-        employee.setUpdateUser(creatorEmployeeId);
+
+
 
         employeeService.save(employee);
         return Result.success("Save employee successfully");
@@ -136,8 +136,8 @@ public class EmployeeController {
     @PutMapping()
     public Result<String> updateEmployee(HttpServletRequest request, @RequestBody Employee employee){
         Long updaterId = (Long) request.getSession().getAttribute("employeeId");
-        employee.setUpdateUser(updaterId);
-        employee.setUpdateTime(LocalDateTime.now());
+        ThreadLocalUserId.setUserId(updaterId);
+
 
         boolean updateResult = employeeService.updateById(employee);
         if(updateResult){
