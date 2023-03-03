@@ -123,7 +123,6 @@ public class EmployeeController {
         queryWrapper.orderByDesc(Employee::getUpdateTime);
 
         Page pageResult = employeeService.page(pageInfo, queryWrapper);
-        log.info(pageResult.getRecords().toString());
         return Result.success(pageResult);
     }
 
@@ -149,4 +148,20 @@ public class EmployeeController {
         }
     }
 
+
+    /**
+     * Get Single Employee info through id
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public Result<Employee> getEmployee(@PathVariable long id){
+        Employee employee = employeeService.getById(id);
+        if(employee != null){
+            employee.setPassword("**");
+            return Result.success(employee);
+        }else {
+            return Result.error("Can not find this employee whom id is:"+id);
+        }
+    }
 }
