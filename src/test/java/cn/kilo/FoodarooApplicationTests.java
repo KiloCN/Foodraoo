@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @SpringBootTest(classes = FoodarooApplication.class)
 class FoodarooApplicationTests {
@@ -24,9 +26,17 @@ class FoodarooApplicationTests {
 
     @Test
     void contextLoads() {
-        employee.setId(1111L);
-        boolean b = employeeService.updateById(employee);
-        System.out.println(b);
+        String source = "java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Sea Food' for key 'idx_category_name'";
+        String regex = "Duplicate entry '([\\s\\S]*)' for key";
+
+        String redundantContent = "";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(source);
+        while (matcher.find()) {
+            redundantContent = matcher.group(1);
+        }
+        System.out.println(redundantContent);
+
     }
 
 }

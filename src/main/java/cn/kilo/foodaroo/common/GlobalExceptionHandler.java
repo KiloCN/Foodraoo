@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Global Exception Handler
@@ -28,8 +30,16 @@ public class GlobalExceptionHandler {
         log.info(ex.fillInStackTrace().toString());
 
         if(ex.getMessage().contains("Duplicate entry")){
-            String[] duplicateInfo = ex.getMessage().replaceAll("\'","").split(" ");
-            return Result.error("The \""+duplicateInfo[2]+"\" is already exist, please try a new one.");
+            String regex = "Duplicate entry '([\\s\\S]*)' for key";
+
+            String redundantContent = "";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(ex.getMessage());
+            while (matcher.find()) {
+                redundantContent = matcher.group(1);
+            }
+            System.out.println(redundantContent);
+            return Result.error("The \""+redundantContent+"\" is already exist, please try a new one.");
 
         }
         return Result.error("Unhandled SQL exception");
