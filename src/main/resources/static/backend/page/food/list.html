@@ -76,7 +76,7 @@
         </el-table-column>
         <el-table-column label="Sale Status">
           <template slot-scope="scope">
-            <span style="margin-right: 10px;">{{ scope.row.status == '0' ? 'stop selling' : 'start sale' }}</span>
+            <span style="margin-right: 10px;">{{ scope.row.status == '0' ? 'Stop Selling' : 'Start Sale' }}</span>
           </template>
         </el-table-column>
         <el-table-column
@@ -104,16 +104,24 @@
               class="blueBug"
               @click="statusHandle(scope.row)"
             >
-              {{ scope.row.status == '0' ? 'start sale' : 'stop selling' }}
+              {{ scope.row.status == '0' ? 'Start Sale' : 'Stop Selling' }}
             </el-button>
-            <el-button
-              type="text"
-              size="small"
-              class="delBut non"
-              @click="deleteHandle('Single', scope.row.id)"
+            <div><el-button
+                    type="text"
+                    size="small"
+                    class="delBut non"
+                    @click="deleteHandle('Single', scope.row.id)"
             >
               Delete
-            </el-button>
+            </el-button></div>
+<!--            <el-button-->
+<!--              type="text"-->
+<!--              size="small"-->
+<!--              class="delBut non"-->
+<!--              @click="deleteHandle('Single', scope.row.id)"-->
+<!--            >-->
+<!--              Delete-->
+<!--            </el-button>-->
           </template>
         </el-table-column>
       </el-table>
