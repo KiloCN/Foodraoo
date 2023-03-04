@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.websocket.server.PathParam;
+
 /**
  * CategoryController is a REST controller for handling category-related HTTP requests.
  *
@@ -57,5 +59,28 @@ public class CategoryController  {
         Page pageResult = categoryService.page(pageInfo, queryWrapper);
 
         return Result.success(pageResult);
+    }
+
+    /**
+     * not used yet
+     *
+     * @return
+     */
+    @GetMapping("/{id}")
+    public Result<Category> getCategory(){
+        return null;
+    }
+
+
+    /**
+     * Naive implementation of delete Category info function
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping()
+    public Result<String> deleteCategory(Long id){
+        categoryService.removeById(id);
+        return Result.success("Delete successfully");
     }
 }
