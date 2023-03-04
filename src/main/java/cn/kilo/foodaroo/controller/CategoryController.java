@@ -6,6 +6,7 @@ import cn.kilo.foodaroo.pojo.Category;
 import cn.kilo.foodaroo.pojo.Employee;
 import cn.kilo.foodaroo.service.CategoryService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -82,5 +83,25 @@ public class CategoryController  {
     public Result<String> deleteCategory(Long id){
         categoryService.removeCategoryById(id);
         return Result.success("Delete successfully");
+    }
+
+
+    /**
+     * Upate Employee info
+     * @param request
+     * @param category
+     * @return
+     */
+    @PutMapping
+    public Result<String> updateCategory(HttpServletRequest request, @RequestBody Category category){
+        Long updaterId = (Long) request.getSession().getAttribute("employeeId");
+        ThreadLocalUserId.setUserId(updaterId);
+
+        boolean updateResult = categoryService.updateById(category);
+        if(updateResult){
+            return Result.success("Update Category info successfully");
+        }else {
+            return Result.error("Update Category info error");
+        }
     }
 }
