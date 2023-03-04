@@ -80,7 +80,7 @@ public class CategoryController  {
      */
     @DeleteMapping()
     public Result<String> deleteCategory(Long id){
-        categoryService.removeById(id);
+        categoryService.removeCategoryById(id);
         return Result.success("Delete successfully");
     }
 }

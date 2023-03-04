@@ -45,5 +45,15 @@ public class GlobalExceptionHandler {
         return Result.error("Unhandled SQL exception");
     }
 
+    /**
+     * Handler for Custom Business Exception
+     * @param ex
+     * @return
+     */
+    @ExceptionHandler(BusinessException.class)
+    public Result businessExceptionHandler(BusinessException ex){
+        return Result.error(ex.getMessage());
+    }
+
 
 }

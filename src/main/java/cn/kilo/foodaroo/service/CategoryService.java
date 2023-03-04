@@ -14,4 +14,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @version 0.0.1-SNAPSHOT
  */
 public interface CategoryService extends IService<Category> {
+
+    /**
+     * Delete a Category based on the id,
+     * Should check whether the Category is associated with a Setmeal(Combo) or Dish
+     * @param id
+     */
+    public void removeCategoryById(Long id);
 }
