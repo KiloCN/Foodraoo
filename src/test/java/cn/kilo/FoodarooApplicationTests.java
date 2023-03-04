@@ -26,17 +26,23 @@ class FoodarooApplicationTests {
 
     @Test
     void contextLoads() {
-        String source = "java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Sea Food' for key 'idx_category_name'";
-        String regex = "Duplicate entry '([\\s\\S]*)' for key";
+//        String source = "java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Sea Food' for key 'idx_category_name'";
+//        String regex = "Duplicate entry '([\\s\\S]*)' for key";
+//
+//        String redundantContent = "";
+//        Pattern pattern = Pattern.compile(regex);
+//        Matcher matcher = pattern.matcher(source);
+//        while (matcher.find()) {
+//            redundantContent = matcher.group(1);
+//        }
+//        System.out.println(redundantContent);
 
-        String redundantContent = "";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(source);
-        while (matcher.find()) {
-            redundantContent = matcher.group(1);
-        }
-        System.out.println(redundantContent);
 
+//        String originalFilename = "lafasfa.png";
+//        String fileSuffix = originalFilename.substring(originalFilename.lastIndexOf("."));
+//        System.out.println(fileSuffix);
+
+        String path = "/Users/kilo.cn/Desktop/Code/Java/Foodraoo/Foodraoo/target/classes/static/backend/images/dish_pic/";
     }
 
 }

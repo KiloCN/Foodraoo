@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.websocket.server.PathParam;
+import java.util.List;
 
 /**
  * CategoryController is a REST controller for handling category-related HTTP requests.
@@ -87,7 +88,7 @@ public class CategoryController  {
 
 
     /**
-     * Upate Employee info
+     * Update Employee info
      * @param request
      * @param category
      * @return
@@ -104,4 +105,21 @@ public class CategoryController  {
             return Result.error("Update Category info error");
         }
     }
+
+
+    /**
+     * Get Category list according to the condition
+     * @param category
+     * @return
+     */
+    @GetMapping("/list")
+    public Result<List<Category>> getCategoryList(Category category){
+        LambdaQueryWrapper<Category> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(category.getType() != null, Category::getType, category.getType());
+        lambdaQueryWrapper.orderByAsc(Category::getSort).orderByDesc(Category::getUpdateTime);
+
+        List<Category> list = categoryService.list(lambdaQueryWrapper);
+        return Result.success(list);
+    }
+
 }
