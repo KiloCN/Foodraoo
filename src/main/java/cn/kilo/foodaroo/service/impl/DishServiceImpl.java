@@ -95,6 +95,10 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
         return;
     }
 
+    /**
+     * Delete Dish and the related Flavor
+     * @param id
+     */
     @Override
     public void deleteWithFlavor(Long id) {
         this.removeById(id);
