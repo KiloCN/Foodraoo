@@ -38,8 +38,6 @@ public class CategoryController  {
     @PostMapping
     public Result<String> saveCategory(HttpServletRequest request,
                                        @RequestBody Category category){
-        Long creatorEmployeeId = (Long) request.getSession().getAttribute("employeeId");
-        ThreadLocalUserId.setUserId(creatorEmployeeId);
 
         category.setName(category.getName().trim());
 
@@ -95,8 +93,6 @@ public class CategoryController  {
      */
     @PutMapping
     public Result<String> updateCategory(HttpServletRequest request, @RequestBody Category category){
-        Long updaterId = (Long) request.getSession().getAttribute("employeeId");
-        ThreadLocalUserId.setUserId(updaterId);
 
         boolean updateResult = categoryService.updateById(category);
         if(updateResult){

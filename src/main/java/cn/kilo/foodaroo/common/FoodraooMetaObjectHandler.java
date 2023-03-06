@@ -24,11 +24,10 @@ public class FoodraooMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void insertFill(MetaObject metaObject) {
-        Long creatorId = ThreadLocalUserId.getUserId();
         metaObject.setValue("createTime", LocalDateTime.now());
         metaObject.setValue("updateTime", LocalDateTime.now());
-        metaObject.setValue("createUser", creatorId);
-        metaObject.setValue("updateUser",creatorId);
+        metaObject.setValue("createUser", BaseContext.getCurrentId());
+        metaObject.setValue("updateUser",BaseContext.getCurrentId());
     }
 
     /**
@@ -37,9 +36,7 @@ public class FoodraooMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void updateFill(MetaObject metaObject) {
-        Long updaterId = ThreadLocalUserId.getUserId();
-
         metaObject.setValue("updateTime", LocalDateTime.now());
-        metaObject.setValue("updateUser", updaterId);
+        metaObject.setValue("updateUser", BaseContext.getCurrentId());
     }
 }

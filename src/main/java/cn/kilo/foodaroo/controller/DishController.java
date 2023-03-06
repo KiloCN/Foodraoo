@@ -1,5 +1,6 @@
 package cn.kilo.foodaroo.controller;
 
+import cn.kilo.foodaroo.common.BusinessException;
 import cn.kilo.foodaroo.common.Result;
 import cn.kilo.foodaroo.common.ThreadLocalUserId;
 import cn.kilo.foodaroo.dto.DishDto;
@@ -10,6 +11,7 @@ import cn.kilo.foodaroo.service.DishFlavorService;
 import cn.kilo.foodaroo.service.DishService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +28,7 @@ import java.util.stream.Collectors;
  */
 @RestController
 @RequestMapping("/dish")
+@Slf4j
 public class DishController {
     @Autowired
     private DishService dishService;
@@ -44,8 +47,6 @@ public class DishController {
      */
     @PostMapping
     public Result<String> saveDish(HttpServletRequest request, @RequestBody DishDto dishDto) {
-        Long createrId = (Long) request.getSession().getAttribute("employeeId");
-        ThreadLocalUserId.setUserId(createrId);
         dishService.saveWithFlavor(dishDto);
         return Result.success("Save new dish successfully");
     }
@@ -106,4 +107,34 @@ public class DishController {
             return Result.error("Can not find the dish which  id is:"+id);
         }
     }
+
+
+    /**
+     * Update a new dish along with its flavors.
+     *
+     * @param request the HttpServletRequest object containing the HTTP request information.
+     * @param dishDto the DishDto object containing the information about the new dish to be saved.
+     * @return the Result object indicating the success of the operation.
+     */
+    @PutMapping
+    public Result<String> updateDish(HttpServletRequest request, @RequestBody DishDto dishDto) {
+        try {
+            dishService.updateWithFlavor(dishDto);
+        } catch (Exception e) {
+            throw new BusinessException("Update dish occur error!");
+        }
+        return Result.success("Update dish successfully");
+    }
+
+
+    @DeleteMapping("")
+    public Result<String> deleteDish(Long ids){
+        try {
+            dishService.deleteWithFlavor(ids);
+        } catch (Exception e) {
+            throw new BusinessException("Delete dish occur error!");
+        }
+        return Result.success("Delete dish successfully");
+    }
+
 }

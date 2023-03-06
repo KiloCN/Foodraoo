@@ -89,8 +89,6 @@ public class EmployeeController {
     @PostMapping
     public Result<String> saveEmployee(HttpServletRequest request, @RequestBody Employee employee){
 
-        Long creatorEmployeeId = (Long) request.getSession().getAttribute("employeeId");
-        ThreadLocalUserId.setUserId(creatorEmployeeId);
         String defaultPassword = DigestUtils.md5DigestAsHex("123456".getBytes(StandardCharsets.UTF_8));
 
         employee.setUsername(employee.getUsername().trim());

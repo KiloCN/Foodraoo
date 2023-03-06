@@ -1,5 +1,6 @@
 package cn.kilo.foodaroo.service.impl;
 
+import cn.kilo.foodaroo.common.BaseContext;
 import cn.kilo.foodaroo.common.Result;
 import cn.kilo.foodaroo.dto.DishDto;
 import cn.kilo.foodaroo.mapper.CategoryMapper;
@@ -59,7 +60,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
      * @return
      */
     @Override
-    public DishDto getByIdWithFlavor(Long id) {
+    public DishDto  getByIdWithFlavor(Long id) {
         DishDto dishDto = new DishDto();
         Dish dish = super.getById(id);
         LambdaQueryWrapper<DishFlavor> queryWrapper = new LambdaQueryWrapper();
@@ -70,4 +71,40 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
         dishDto.setFlavors(dishFlavorList);
         return dishDto;
     }
+
+    /**
+     * Update Dish info with Flavor info by ID
+     * @param dishDto
+     * @return
+     */
+    @Override
+    public void updateWithFlavor(DishDto dishDto) {
+        dishDto.setUpdateUser(BaseContext.getCurrentId());
+        this.updateById(dishDto);
+
+        LambdaQueryWrapper<DishFlavor> lambdaQueryWrapper = new LambdaQueryWrapper();
+        lambdaQueryWrapper.eq(DishFlavor::getDishId,dishDto.getId());
+        dishFlavorService.remove(lambdaQueryWrapper);
+
+
+        Long dishId = dishDto.getId();
+        dishDto.getFlavors().stream().forEach((DishFlavor dishFlavor) -> {
+            dishFlavor.setDishId(dishId);
+        });
+        dishFlavorService.saveBatch(dishDto.getFlavors());
+        return;
+    }
+
+    @Override
+    public void deleteWithFlavor(Long id) {
+        this.removeById(id);
+
+        LambdaQueryWrapper<DishFlavor> lambdaQueryWrapper = new LambdaQueryWrapper();
+        lambdaQueryWrapper.eq(DishFlavor::getDishId,id);
+        dishFlavorService.remove(lambdaQueryWrapper);
+
+        return;
+    }
+
+
 }
