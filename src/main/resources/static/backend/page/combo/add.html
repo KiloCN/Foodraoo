@@ -75,11 +75,11 @@
       .addDishCon .leftCont {
         display: flex;
         border-right: solid 2px #E4E7ED;
-        width: 60%;
+        width: 90%;
         padding: 15px;
       }
       .addDishCon .leftCont .tabBut {
-        width: 110px;
+        width: 145px;
       }
       .addDishCon .leftCont .tabBut span {
         display: block;
@@ -265,7 +265,7 @@
         title="Add dishes"
         class="addDishList"
         :visible.sync="dialogVisible"
-        width="60%"
+        width="80%"
         :before-close="handleClose"
       >
         <el-input
@@ -314,7 +314,7 @@
                     >
                       <div class="item">
                         <span style="flex: 3;text-align: left">{{ item.dishName }}</span>
-                        <span>{{ item.status == 0 ? '停售' : '在售' }}</span>
+                        <span>{{ item.status == 0 ? 'stop' : 'on' }}</span>
                         <span>{{ Number(item.price)/100 }}</span>
                       </div>
                     </el-checkbox>

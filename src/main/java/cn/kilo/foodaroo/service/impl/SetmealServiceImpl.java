@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * The SetmealServiceImpl class is a service implementation that provides methods to manage Setmeal entities using a SetmealMapper instance.
- * It extends the ServiceImpl class and implements the DishService interface.
+ * It extends the ServiceImpl class and implements the SetmealService interface.
  * @see ServiceImpl
  * @see SetmealMapper
  * @see Setmeal

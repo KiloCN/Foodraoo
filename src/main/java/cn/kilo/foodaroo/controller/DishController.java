@@ -127,6 +127,11 @@ public class DishController {
     }
 
 
+    /**
+     * Update the dish along with its flavors by id
+     * @param ids
+     * @return
+     */
     @DeleteMapping("")
     public Result<String> deleteDish(Long ids){
         try {
@@ -135,6 +140,23 @@ public class DishController {
             throw new BusinessException("Delete dish occur error!");
         }
         return Result.success("Delete dish successfully");
+    }
+
+
+    /**
+     * Get Dish list according to the condition
+     * @param dish
+     * @return
+     */
+    @GetMapping("/list")
+    public Result<List<Dish>> getDishList(Dish dish){
+        LambdaQueryWrapper<Dish> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
+        lambdaQueryWrapper.eq(Dish::getStatus,1);
+        lambdaQueryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+
+        List<Dish> list = dishService.list(lambdaQueryWrapper);
+        return Result.success(list);
     }
 
 }
