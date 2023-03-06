@@ -156,7 +156,6 @@ public class EmployeeController {
     public Result<Employee> getEmployee(@PathVariable long id){
         Employee employee = employeeService.getById(id);
         if(employee != null){
-            employee.setPassword("**");
             return Result.success(employee);
         }else {
             return Result.error("Can not find this employee whom id is:"+id);
