@@ -1,5 +1,6 @@
 package cn.kilo.foodaroo.service.impl;
 
+import cn.kilo.foodaroo.common.Result;
 import cn.kilo.foodaroo.dto.DishDto;
 import cn.kilo.foodaroo.mapper.CategoryMapper;
 import cn.kilo.foodaroo.mapper.DishMapper;
@@ -8,10 +9,14 @@ import cn.kilo.foodaroo.pojo.Dish;
 import cn.kilo.foodaroo.pojo.DishFlavor;
 import cn.kilo.foodaroo.service.DishFlavorService;
 import cn.kilo.foodaroo.service.DishService;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * The DishServiceImpl class is responsible for implementing the DishService interface and providing service methods related to Dish objects.
@@ -46,5 +51,23 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
         });
         dishFlavorService.saveBatch(dishDto.getFlavors());
 
+    }
+
+    /**
+     * Get Dish info with Flavor info by ID
+     * @param id
+     * @return
+     */
+    @Override
+    public DishDto getByIdWithFlavor(Long id) {
+        DishDto dishDto = new DishDto();
+        Dish dish = super.getById(id);
+        LambdaQueryWrapper<DishFlavor> queryWrapper = new LambdaQueryWrapper();
+        queryWrapper.eq(DishFlavor::getDishId,id);
+        List<DishFlavor> dishFlavorList = dishFlavorService.list(queryWrapper);
+
+        BeanUtils.copyProperties(dish,dishDto);
+        dishDto.setFlavors(dishFlavorList);
+        return dishDto;
     }
 }

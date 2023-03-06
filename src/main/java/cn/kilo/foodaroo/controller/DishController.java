@@ -90,4 +90,20 @@ public class DishController {
         return Result.success(dishDtoPage);
 
     }
+
+
+    /**
+     * This method retrieves a dish with the given ID, along with its flavors, if it exists.
+     * @param id The id of Dish
+     * @return
+     */
+    @GetMapping("/{id}")
+    private Result<DishDto> getDishById(@PathVariable Long id){
+        DishDto dishDto = dishService.getByIdWithFlavor(id);
+        if(dishDto != null){
+            return Result.success(dishDto);
+        }else {
+            return Result.error("Can not find the dish which  id is:"+id);
+        }
+    }
 }

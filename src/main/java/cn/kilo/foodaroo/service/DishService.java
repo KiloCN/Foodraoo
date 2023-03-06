@@ -1,5 +1,6 @@
 package cn.kilo.foodaroo.service;
 
+import cn.kilo.foodaroo.common.Result;
 import cn.kilo.foodaroo.dto.DishDto;
 import cn.kilo.foodaroo.mapper.DishMapper;
 import cn.kilo.foodaroo.pojo.Category;
@@ -18,4 +19,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface DishService extends IService<Dish> {
 
     public void saveWithFlavor(DishDto dishDto);
+
+    public DishDto getByIdWithFlavor(Long id);
 }
