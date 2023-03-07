@@ -1,6 +1,9 @@
 package cn.kilo.foodaroo.service;
 
+import cn.kilo.foodaroo.dto.DishDto;
+import cn.kilo.foodaroo.dto.SetmealDto;
 import cn.kilo.foodaroo.pojo.Setmeal;
+import cn.kilo.foodaroo.pojo.SetmealDish;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @version 0.0.1-SNAPSHOT
  */
 public interface SetmealService extends IService<Setmeal> {
+    public void saveWithDish(SetmealDto setmealDto);
 }

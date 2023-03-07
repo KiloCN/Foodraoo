@@ -13,6 +13,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @author kilo
  * @version 0.0.1-SNAPSHOT
  */
-@Mapper
+
 public interface SetmealDishService extends IService<SetmealDish> {
 }
