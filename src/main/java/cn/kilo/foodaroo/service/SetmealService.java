@@ -23,4 +23,6 @@ public interface SetmealService extends IService<Setmeal> {
 
     @Transactional
     void updateWithDish(SetmealDto setmealDto);
+
+    void deleteWithDish(Long id);
 }

@@ -2,6 +2,7 @@ package cn.kilo.foodaroo.service.impl;
 
 import cn.kilo.foodaroo.dto.SetmealDto;
 import cn.kilo.foodaroo.mapper.SetmealMapper;
+import cn.kilo.foodaroo.pojo.DishFlavor;
 import cn.kilo.foodaroo.pojo.Setmeal;
 import cn.kilo.foodaroo.pojo.SetmealDish;
 import cn.kilo.foodaroo.service.SetmealDishService;
@@ -93,6 +94,22 @@ public class SetmealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal> impl
 
 
         setmealDishService.updateBatchById(setmealDishList);
+        return;
+    }
+
+
+    /**
+     * Delete Setmeal and the related Dishs in Setmeal_dish table
+     * @param id
+     */
+    @Override
+    public void deleteWithDish(Long id) {
+        this.removeById(id);
+
+        LambdaQueryWrapper<SetmealDish> lambdaQueryWrapper = new LambdaQueryWrapper();
+        lambdaQueryWrapper.eq(SetmealDish::getSetmealId,id);
+        setmealDishService.remove(lambdaQueryWrapper);
+
         return;
     }
 }

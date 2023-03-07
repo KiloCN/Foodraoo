@@ -2,6 +2,7 @@ package cn.kilo.foodaroo.controller;
 
 
 import cn.kilo.foodaroo.common.Result;
+import cn.kilo.foodaroo.common.exception.BusinessException;
 import cn.kilo.foodaroo.dto.DishDto;
 import cn.kilo.foodaroo.dto.SetmealDto;
 import cn.kilo.foodaroo.pojo.Category;
@@ -124,4 +125,13 @@ public class SetmealController {
     }
 
 
+    @DeleteMapping
+    public Result<String> deleteSetmeal(Long ids){
+        try {
+            setmealService.deleteWithDish(ids);
+        } catch (Exception e) {
+            throw new BusinessException("Delete Setmeal occur error!");
+        }
+        return Result.success("Delete Setmeal successfully");
+    }
 }
