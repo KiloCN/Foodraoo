@@ -1,8 +1,7 @@
 package cn.kilo.foodaroo.controller;
 
-import cn.kilo.foodaroo.common.BusinessException;
+import cn.kilo.foodaroo.common.exception.BusinessException;
 import cn.kilo.foodaroo.common.Result;
-import cn.kilo.foodaroo.common.ThreadLocalUserId;
 import cn.kilo.foodaroo.dto.DishDto;
 import cn.kilo.foodaroo.pojo.Category;
 import cn.kilo.foodaroo.pojo.Dish;

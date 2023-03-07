@@ -1,5 +1,7 @@
 package cn.kilo.foodaroo.common;
 
+import cn.kilo.foodaroo.common.exception.BusinessException;
+import cn.kilo.foodaroo.common.exception.FileRelatedException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -53,6 +55,17 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BusinessException.class)
     public Result businessExceptionHandler(BusinessException ex){
         return Result.error(ex.getMessage());
+    }
+
+
+    /**
+     * Handler for FileRelatedException
+     * @param ex
+     * @return
+     */
+    @ExceptionHandler(FileRelatedException.class)
+    public void fileExceptionHandler(FileRelatedException ex){
+        log.info(ex.getMessage());
     }
 
 

@@ -91,4 +91,37 @@ public class SetmealController {
         return Result.success(dtoPage);
 
     }
+
+
+    /**
+     * This method retrieves a Setmeal with the given ID, along with its Dishs, if it exists.
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public Result<SetmealDto> getSetmealById(@PathVariable Long id){
+        SetmealDto setmealWithDishById = setmealService.getSetmealWithDishById(id);
+        if (setmealWithDishById != null){
+            return Result.success(setmealWithDishById);
+        }else {
+            return Result.error("This Setmeal ID was not found.");
+        }
+    }
+
+    /**
+     * Update a new Setmeal along with its Dishs.
+     * @param setmealDto
+     * @return
+     */
+    @PutMapping
+    public Result<String> updateSetmeal(@RequestBody SetmealDto setmealDto){
+        try {
+            setmealService.updateWithDish(setmealDto);
+            return Result.success("Update Setmeal successfully.");
+        } catch (Exception e) {
+            return Result.error("Occur error when updating!");
+        }
+    }
+
+
 }

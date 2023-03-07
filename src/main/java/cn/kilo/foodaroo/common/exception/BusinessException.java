@@ -1,4 +1,4 @@
-package cn.kilo.foodaroo.common;
+package cn.kilo.foodaroo.common.exception;
 /**
  * Constructs a new BusinessException with the specified detail message.
  *

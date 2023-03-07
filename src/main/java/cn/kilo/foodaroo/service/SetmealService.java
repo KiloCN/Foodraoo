@@ -5,6 +5,7 @@ import cn.kilo.foodaroo.dto.SetmealDto;
 import cn.kilo.foodaroo.pojo.Setmeal;
 import cn.kilo.foodaroo.pojo.SetmealDish;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * The SetmealService interface extends the IService interface to provide specific service methods for Setmeal entities.
@@ -17,4 +18,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface SetmealService extends IService<Setmeal> {
     public void saveWithDish(SetmealDto setmealDto);
+
+    public SetmealDto getSetmealWithDishById(Long id);
+
+    @Transactional
+    void updateWithDish(SetmealDto setmealDto);
 }

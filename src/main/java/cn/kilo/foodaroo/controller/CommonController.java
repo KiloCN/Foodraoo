@@ -1,6 +1,8 @@
 package cn.kilo.foodaroo.controller;
 
+import cn.kilo.foodaroo.common.exception.BusinessException;
 import cn.kilo.foodaroo.common.Result;
+import cn.kilo.foodaroo.common.exception.FileRelatedException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
@@ -90,9 +91,9 @@ public class CommonController {
             fileInputStream.close();
             outputStream.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new FileRelatedException(e.getMessage().toString());
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new FileRelatedException(e.getMessage().toString());
         }
 
     }
