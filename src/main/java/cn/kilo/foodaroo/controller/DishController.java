@@ -5,6 +5,7 @@ import cn.kilo.foodaroo.common.Result;
 import cn.kilo.foodaroo.dto.DishDto;
 import cn.kilo.foodaroo.pojo.Category;
 import cn.kilo.foodaroo.pojo.Dish;
+import cn.kilo.foodaroo.pojo.Setmeal;
 import cn.kilo.foodaroo.service.CategoryService;
 import cn.kilo.foodaroo.service.DishFlavorService;
 import cn.kilo.foodaroo.service.DishService;
@@ -120,6 +121,7 @@ public class DishController {
         try {
             dishService.updateWithFlavor(dishDto);
         } catch (Exception e) {
+            log.info(e.getMessage().toString());
             throw new BusinessException("Update dish occur error!");
         }
         return Result.success("Update dish successfully");
@@ -136,6 +138,7 @@ public class DishController {
         try {
             dishService.deleteWithFlavor(ids);
         } catch (Exception e) {
+            log.info(e.getMessage().toString());
             throw new BusinessException("Delete dish occur error!");
         }
         return Result.success("Delete dish successfully");
@@ -158,4 +161,23 @@ public class DishController {
         return Result.success(list);
     }
 
+    /**
+     * Update the status of Dish
+     * @param status
+     * @param ids
+     * @return
+     */
+    @PostMapping("/status/{status}")
+    public Result<String> updateState(@PathVariable int status, Long ids){
+        Dish dish = new Dish();
+        dish.setId(ids);
+        dish.setStatus(status);
+        try {
+            dishService.updateById(dish);
+            return Result.success("Update status successfully.");
+        } catch (Exception e) {
+            log.info(e.getMessage().toString());
+            return Result.error("Update status occur error!");
+        }
+    }
 }

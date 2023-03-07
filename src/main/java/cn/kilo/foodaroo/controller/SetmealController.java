@@ -50,7 +50,7 @@ public class SetmealController {
             setmealService.saveWithDish(setmealDto);
             return Result.success("Save new Combo successful");
         } catch (Exception e) {
-            e.printStackTrace();
+            log.info(e.getMessage().toString());
             return Result.error("Save Combo occur error");
         }
     }
@@ -120,18 +120,46 @@ public class SetmealController {
             setmealService.updateWithDish(setmealDto);
             return Result.success("Update Setmeal successfully.");
         } catch (Exception e) {
+            log.info(e.getMessage().toString());
             return Result.error("Occur error when updating!");
         }
     }
 
 
+    /**
+     * Delete Setmeal and the relation between Setmeal and Dishes.
+     * @param ids
+     * @return
+     */
     @DeleteMapping
     public Result<String> deleteSetmeal(Long ids){
         try {
             setmealService.deleteWithDish(ids);
         } catch (Exception e) {
+            log.info(e.getMessage().toString());
             throw new BusinessException("Delete Setmeal occur error!");
         }
         return Result.success("Delete Setmeal successfully");
+    }
+
+
+    /**
+     * Update the status of Satmeal
+     * @param status
+     * @param ids
+     * @return
+     */
+    @PostMapping("/status/{status}")
+    public Result<String> updateState(@PathVariable int status, Long ids){
+        Setmeal setmeal = new Setmeal();
+        setmeal.setId(ids);
+        setmeal.setStatus(status);
+        try {
+            setmealService.updateById(setmeal);
+            return Result.success("Update status successfully.");
+        } catch (Exception e) {
+            log.info(e.getMessage().toString());
+            return Result.error("Update status occur error!");
+        }
     }
 }
