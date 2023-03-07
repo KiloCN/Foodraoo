@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 
@@ -84,5 +85,18 @@ public class UserController {
             return Result.success(user);
         }
         return Result.error("Login fail!");
+    }
+
+
+    /**
+     * Logout the currently logged-in user account.
+     *
+     * @param request the HTTP servlet request object.
+     * @return
+     */
+    @PostMapping("/logout")
+    public Result<String> logout(HttpServletRequest request) {
+        request.getSession().removeAttribute("user");
+        return Result.success("Logout successfully");
     }
 }
