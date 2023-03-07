@@ -4,7 +4,7 @@ import cn.kilo.foodaroo.common.Result;
 import cn.kilo.foodaroo.common.ThreadLocalUserId;
 import cn.kilo.foodaroo.pojo.Employee;
 import cn.kilo.foodaroo.service.EmployeeService;
-import cn.kilo.foodaroo.util.StringUtil;
+import cn.kilo.foodaroo.utils.StringUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
@@ -12,11 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
-import java.util.List;
 
 /**
  * The EmployeeController class handles HTTP requests related to employee management.

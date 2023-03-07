@@ -55,8 +55,11 @@ public class LoginCheckFilter implements Filter {
         String[] urls = new String[]{
                 "/employee/login",
                 "/employee/logout",
+                "/user/login",
+                "/user/sendMsg",
+                "/common/**",
                 "/backend/**",
-                "/backend/**"
+                "/front/**"
         };
 
         if (checkURI(urls, request.getRequestURI())) {
@@ -69,7 +72,15 @@ public class LoginCheckFilter implements Filter {
 
                 filterChain. doFilter(request, response);
                 return;
-            } else {
+            }
+            else if(request.getSession().getAttribute("user") != null){
+                Long userId = (Long) request.getSession().getAttribute("user");
+                BaseContext.setCurrentId(userId);
+
+                filterChain. doFilter(request, response);
+                return;
+            }
+            else {
 
                 response.getWriter().write(JSON.toJSONString(Result.error("NOTLOGIN")));
                 return;

@@ -1,4 +1,4 @@
-package cn.kilo.foodaroo.util;
+package cn.kilo.foodaroo.utils;
 
 /**
  *The StringUtil class provides utility methods for working with strings.

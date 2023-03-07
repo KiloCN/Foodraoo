@@ -1,9 +1,3 @@
-import Vue from 'vue'
-import ElementUI from 'element-ui'
-import locale from 'element-ui/lib/locale/lang/en'
-
-Vue.use(ElementUI, { locale })
-
 //获取所有的菜品分类
 function categoryListApi() {
     return $axios({
@@ -34,6 +28,7 @@ function setmealListApi(data) {
 function cartListApi(data) {
     return $axios({
         'url': '/shoppingCart/list',
+        //'url': '/front/cartData.json',
         'method': 'get',
         params:{...data}
     })
