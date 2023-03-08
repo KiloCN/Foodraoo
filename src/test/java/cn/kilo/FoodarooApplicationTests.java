@@ -3,13 +3,20 @@ package cn.kilo;
 import cn.kilo.foodaroo.FoodarooApplication;
 import cn.kilo.foodaroo.controller.EmployeeController;
 import cn.kilo.foodaroo.pojo.Employee;
+import cn.kilo.foodaroo.pojo.Orders;
 import cn.kilo.foodaroo.service.EmployeeService;
+import cn.kilo.foodaroo.service.OrderService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.format.datetime.standard.DateTimeFormatterFactory;
 
 import javax.annotation.Resource;
+import java.text.DateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,6 +29,9 @@ class FoodarooApplicationTests {
     private EmployeeService employeeService;
     @Autowired
     private Employee employee;
+
+    @Autowired
+    private OrderService orderService;
 
 
     @Test
@@ -44,12 +54,16 @@ class FoodarooApplicationTests {
 
 //        String path = "/Users/kilo.cn/Desktop/Code/Java/Foodraoo/Foodraoo/target/classes/static/backend/images/dish_pic/";
 
-        Object o=new Object(){
-            public boolean equals(Object obj){
-                return true;
-            }
-        };
-        System.out.println(o.equals("Fred"));
+        String time = "2023-03-06%2000%3A00%3A00";
+//        Orders orders = orderService.getById(1633509698467917825L);
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd%20HH%3Amm%3Ass");
+
+//        System.out.println(orders.getOrderTime().toString());
+//        System.out.println(LocalDateTime.now());
+        time = time.replaceAll("%20","T").replaceAll("%3A",":");
+        LocalDateTime parse = LocalDateTime.parse(time);
+        System.out.println(parse);
+
     }
 
 }

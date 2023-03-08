@@ -33,7 +33,7 @@
     margin-bottom: 0;
   }
   .info-box .item-box .label{
-    width: 96px;
+    width: 158px;
   }
   .info-box .item-box .des{
     flex: 1;
@@ -70,10 +70,10 @@
           </template>
         </el-table-column>
         <el-table-column prop="userName" label="User Name"></el-table-column>
-        <el-table-column prop="phone" label="Phone Number"></el-table-column>
+        <el-table-column prop="phone" label="Phone"></el-table-column>
         <el-table-column prop="address" label="Address" show-overflow-tooltip></el-table-column>
         <el-table-column prop="orderTime" label="Order Time" min-width="100"></el-table-column>
-        <el-table-column prop="amount" label="Paid-in amount">
+        <el-table-column prop="amount" label="Amount">
           <template slot-scope="{ row }">
             <span>￥{{ row.amount }}</span>
           </template>
