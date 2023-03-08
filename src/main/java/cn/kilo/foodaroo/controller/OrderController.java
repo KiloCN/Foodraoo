@@ -9,10 +9,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
@@ -95,5 +92,21 @@ public class OrderController {
         Page<Orders> pageResult = orderService.page(pageInfo, ordersLambdaQueryWrapper);
         return Result.success(pageResult);
 
+    }
+
+
+    /**
+     * Update Order info
+     * @param orders
+     * @return
+     */
+    @PutMapping
+    public Result<String> updateOrder(@RequestBody Orders orders){
+        try {
+            orderService.updateById(orders);
+            return Result.success("Update order successfully!");
+        } catch (Exception e) {
+            return Result.error("Error in updating this order!");
+        }
     }
 }
