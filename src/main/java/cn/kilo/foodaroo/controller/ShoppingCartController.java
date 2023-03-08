@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The ShoppingCartController class is a RESTful controller that handles shopping cart related operations.
@@ -97,5 +98,41 @@ public class ShoppingCartController {
         shoppingCartService.remove(queryWrapper);
 
         return Result.success("Emptying shopping cart successfully");
+    }
+
+    /**
+     * Reduce count or remove of a dish/setmeal in user's shopping cart
+     *
+     * @param map
+     * @return
+     */
+    @PostMapping("/sub")
+    public Result<String> sub(@RequestBody Map map){
+        Long currentId = BaseContext.getCurrentId();
+        LambdaQueryWrapper<ShoppingCart> shoppingCartLambdaQueryWrapper = new LambdaQueryWrapper<>();
+
+
+        String setmealId = (String) map.get("setmealId");
+        String dishId =  (String) map.get("dishId");
+
+
+
+
+        shoppingCartLambdaQueryWrapper.eq(ShoppingCart::getUserId,currentId);
+        shoppingCartLambdaQueryWrapper.eq(setmealId != null, ShoppingCart::getSetmealId, setmealId)
+                .eq(dishId != null, ShoppingCart::getDishId, dishId);
+        ShoppingCart shoppingCart = shoppingCartService.getOne(shoppingCartLambdaQueryWrapper);
+
+
+       if(shoppingCart.getNumber() != 1){
+           shoppingCart.setNumber(shoppingCart.getNumber()-1);
+           shoppingCartService.updateById(shoppingCart);
+
+       }else {
+           shoppingCartService.removeById(shoppingCart);
+       }
+
+
+       return Result.success("Sub successful");
     }
 }
