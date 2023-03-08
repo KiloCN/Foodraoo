@@ -42,7 +42,14 @@ class FoodarooApplicationTests {
 //        String fileSuffix = originalFilename.substring(originalFilename.lastIndexOf("."));
 //        System.out.println(fileSuffix);
 
-        String path = "/Users/kilo.cn/Desktop/Code/Java/Foodraoo/Foodraoo/target/classes/static/backend/images/dish_pic/";
+//        String path = "/Users/kilo.cn/Desktop/Code/Java/Foodraoo/Foodraoo/target/classes/static/backend/images/dish_pic/";
+
+        Object o=new Object(){
+            public boolean equals(Object obj){
+                return true;
+            }
+        };
+        System.out.println(o.equals("Fred"));
     }
 
 }
