@@ -78,4 +78,22 @@ public class OrderController {
 
         return Result.success(pageResult);
     }
+
+    /**
+     * Get the History Order Page of current user
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    @GetMapping("/userPage")
+    public Result<Page<Orders>> getHistoryOrderPage(int page, int pageSize){
+        Long currentUserId = BaseContext.getCurrentId();
+        Page<Orders> pageInfo = new Page<>(page, pageSize);
+        LambdaQueryWrapper<Orders> ordersLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        ordersLambdaQueryWrapper.eq(Orders::getUserId,currentUserId);
+        ordersLambdaQueryWrapper.orderByDesc(Orders::getOrderTime);
+        Page<Orders> pageResult = orderService.page(pageInfo, ordersLambdaQueryWrapper);
+        return Result.success(pageResult);
+
+    }
 }

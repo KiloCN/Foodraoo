@@ -69,7 +69,13 @@
         <script src="../../backend/plugins/axios/axios.min.js"></script>
         <script src="./../js/request.js"></script>
         <script src="./../api/order.js"></script>
+        <!--  国际化-->
+
+        <script src="//unpkg.com/vue@2"></script>
+        <script src="//unpkg.com/element-ui"></script>
+        <script src="//unpkg.com/element-ui/lib/umd/locale/en.js"></script>
         <script>
+            ELEMENT.locale(ELEMENT.lang.en)
         new Vue({
             el:"#order",
             data(){
