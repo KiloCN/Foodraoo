@@ -19,3 +19,4 @@ mybatis-plus:
 
 foodraoo:
   img-path: static/backend/images/dish_pic/
+#  abs-path: /Users/kilo.cn/Desktop/Code/Java/Foodraoo/Foodraoo/src/main/resources/static/backend/images/dish_pic/
