@@ -34,8 +34,8 @@ This system provides **merchant management webset** and **customer order webset*
 
 ### Add Default Address & Pay Bill
 
-| <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091323631.gif" alt="Kapture 2023-03-09 at 13.22.41" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091326652.gif" alt="Kapture 2023-03-09 at 13.25.03" style="zoom:50%;" /> |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091323631.gif" alt="Kapture 2023-03-09 at 13.22.41" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091326652.gif" alt="Kapture 2023-03-09 at 13.25.03" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091358655.png" alt="image-20230309135823615" style="zoom:50%;" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 
   
 
