@@ -16,6 +16,9 @@ This system provides **merchant management webset** and **customer order webset*
 
 ### User Login & Logout
 
+| <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091258475.gif" alt="Kapture 2023-03-09 at 12.56.50" style="zoom:20%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091302787.gif" alt="Kapture 2023-03-09 at 13.01.11" style="zoom:20%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091328345.gif" alt="Kapture 2023-03-09 at 13.27.06" style="zoom:20%;" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+
  <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091258475.gif" alt="Kapture 2023-03-09 at 12.56.50" style="zoom:20%;" /> <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091302787.gif" alt="Kapture 2023-03-09 at 13.01.11" style="zoom:20%;" /> <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091328345.gif" alt="Kapture 2023-03-09 at 13.27.06" style="zoom:20%;" />
 
 
