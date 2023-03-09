@@ -16,18 +16,17 @@ This system provides **merchant management webset** and **customer order webset*
 
 ### User Login & Logout
 
-| <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091258475.gif" alt="Kapture 2023-03-09 at 12.56.50" style="zoom:20%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091302787.gif" alt="Kapture 2023-03-09 at 13.01.11" style="zoom:20%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091328345.gif" alt="Kapture 2023-03-09 at 13.27.06" style="zoom:20%;" /> |
+| <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091258475.gif" alt="Kapture 2023-03-09 at 12.56.50" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091302787.gif" alt="Kapture 2023-03-09 at 13.01.11" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091328345.gif" alt="Kapture 2023-03-09 at 13.27.06" style="zoom:50%;" /> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 
- <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091258475.gif" alt="Kapture 2023-03-09 at 12.56.50" style="zoom:20%;" /> <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091302787.gif" alt="Kapture 2023-03-09 at 13.01.11" style="zoom:20%;" /> <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091328345.gif" alt="Kapture 2023-03-09 at 13.27.06" style="zoom:20%;" />
+
 
 
 
 ### Add/Reduce Shopping Cart
 
-
-
- <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091305526.gif" alt="Kapture 2023-03-09 at 13.03.59" style="zoom:50%;" /> <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091314863.gif" alt="Kapture 2023-03-09 at 13.13.19" style="zoom:50%;" /> <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091315052.gif" alt="Kapture 2023-03-09 at 13.14.53" style="zoom:50%;" />
+| <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091305526.gif" alt="Kapture 2023-03-09 at 13.03.59" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091314863.gif" alt="Kapture 2023-03-09 at 13.13.19" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091315052.gif" alt="Kapture 2023-03-09 at 13.14.53" style="zoom:50%;" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 
 
 
@@ -35,7 +34,10 @@ This system provides **merchant management webset** and **customer order webset*
 
 ### Add Default Address & Pay Bill
 
- <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091323631.gif" alt="Kapture 2023-03-09 at 13.22.41" style="zoom:50%;" /> <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091326652.gif" alt="Kapture 2023-03-09 at 13.25.03" style="zoom:50%;" />
+| <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091323631.gif" alt="Kapture 2023-03-09 at 13.22.41" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091326652.gif" alt="Kapture 2023-03-09 at 13.25.03" style="zoom:50%;" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+
+  
 
 
 
@@ -63,4 +65,10 @@ This system provides **merchant management webset** and **customer order webset*
 
 ![image-20230309134429797](https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091344821.png)
 
-<img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091343610.png" alt="image-20230309134330560" style="zoom:50%;" />  <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091340467.gif" alt="food-delivery" style="zoom:40%;" />  <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091346652.png" alt="image-20230309134606620" style="zoom:50%;" />
+
+
+
+
+| <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091343610.png" alt="image-20230309134330560" style="zoom:50%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091340467.gif" alt="food-delivery" style="zoom:40%;" /> | <img src="https://raw.githubusercontent.com/KiloCN/pictures_bad/master/202303091346652.png" alt="image-20230309134606620" style="zoom:50%;" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+
