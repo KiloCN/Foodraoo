@@ -15,6 +15,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -45,6 +47,7 @@ public class SetmealController {
      * @return
      */
     @PostMapping
+    @CacheEvict(value = "setmealCache", allEntries = true)
     public Result<String> saveSetmeal(@RequestBody SetmealDto setmealDto) {
         try {
             setmealService.saveWithDish(setmealDto);
@@ -115,6 +118,7 @@ public class SetmealController {
      * @return
      */
     @PutMapping
+    @CacheEvict(value = "setmealCache", allEntries = true)
     public Result<String> updateSetmeal(@RequestBody SetmealDto setmealDto){
         try {
             setmealService.updateWithDish(setmealDto);
@@ -131,6 +135,7 @@ public class SetmealController {
      * @param ids
      * @return
      */
+    @CacheEvict(value = "setmealCache", allEntries = true)
     @DeleteMapping
     public Result<String> deleteSetmeal(Long ids){
         try {
@@ -150,6 +155,7 @@ public class SetmealController {
      * @return
      */
     @PostMapping("/status/{status}")
+    @CacheEvict(value = "setmealCache", allEntries = true)
     public Result<String> updateState(@PathVariable int status, Long ids){
         Setmeal setmeal = new Setmeal();
         setmeal.setId(ids);
@@ -169,6 +175,7 @@ public class SetmealController {
      * @param setmeal
      * @return
      */
+    @Cacheable(value = "setmealCache", key = "#setmeal.categoryId + '_' + #setmeal.status")
     @GetMapping("/list")
     public Result<List<Setmeal>> list(Setmeal setmeal){
         LambdaQueryWrapper<Setmeal> queryWrapper = new LambdaQueryWrapper<>();

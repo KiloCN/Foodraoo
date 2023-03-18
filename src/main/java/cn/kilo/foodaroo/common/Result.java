@@ -2,6 +2,7 @@ package cn.kilo.foodaroo.common;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,7 +15,7 @@ import java.util.Map;
  * @version 0.0.1-SNAPSHOT
  */
 @Data
-public class Result<T> {
+public class Result<T> implements Serializable {
 
     /**
      * code represent whether is success
