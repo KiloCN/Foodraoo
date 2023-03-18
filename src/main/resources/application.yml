@@ -9,6 +9,13 @@ spring:
       url: jdbc:mysql://42.193.219.12:3306/foodaroo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: wLfBobe!C_4o4azXKY84.MEwjtX
+  redis:
+    password: wLfBobe!C_4o4azXKY84.MEwjtX
+    host: 42.193.219.12
+    port: 6379
+    database: 0
+
+
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
