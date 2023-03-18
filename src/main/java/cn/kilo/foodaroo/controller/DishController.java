@@ -14,10 +14,12 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
@@ -37,6 +39,9 @@ public class DishController {
 
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     /**
      * Saves a new dish along with its flavors.
@@ -93,13 +98,16 @@ public class DishController {
     }
 
 
+
+
+
     /**
      * This method retrieves a dish with the given ID, along with its flavors, if it exists.
      * @param id The id of Dish
      * @return
      */
     @GetMapping("/{id}")
-    private Result<DishDto> getDishById(@PathVariable Long id){
+    public Result<DishDto> getDishById(@PathVariable Long id){
         DishDto dishDto = dishService.getByIdWithFlavor(id);
         if(dishDto != null){
             return Result.success(dishDto);
@@ -124,6 +132,8 @@ public class DishController {
             log.info(e.getMessage().toString());
             throw new BusinessException("Update dish occur error!");
         }
+
+        boolean clearCache = redisTemplate.delete("dish_"+ dishDto.getCategoryId() + "_1");
         return Result.success("Update dish successfully");
     }
 
@@ -141,6 +151,7 @@ public class DishController {
             log.info(e.getMessage().toString());
             throw new BusinessException("Delete dish occur error!");
         }
+        redisTemplate.delete("dish_"+ dishService.getById(ids).getCategoryId() + "_1");
         return Result.success("Delete dish successfully");
     }
 
@@ -152,13 +163,26 @@ public class DishController {
      */
     @GetMapping("/list")
     public Result<List<Dish>> getDishList(Dish dish){
-        LambdaQueryWrapper<Dish> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-        lambdaQueryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
-        lambdaQueryWrapper.eq(Dish::getStatus,1);
-        lambdaQueryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+        List<Dish> dishList = null;
+        String key =  "dish_"+dish.getCategoryId()+"_"+dish.getStatus();
+        dishList = (List<Dish>) redisTemplate.opsForValue().get(key);
 
-        List<Dish> list = dishService.list(lambdaQueryWrapper);
-        return Result.success(list);
+        if(dishList != null){
+            return Result.success(dishList);
+
+        }else {
+            LambdaQueryWrapper<Dish> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+            lambdaQueryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
+            lambdaQueryWrapper.eq(Dish::getStatus,1);
+            lambdaQueryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+
+            dishList = dishService.list(lambdaQueryWrapper);
+            redisTemplate.opsForValue().set(key, dishList, 1, TimeUnit.DAYS);
+        }
+
+
+
+        return Result.success(dishList);
     }
 
     /**
@@ -174,6 +198,7 @@ public class DishController {
         dish.setStatus(status);
         try {
             dishService.updateById(dish);
+            redisTemplate.delete("dish_"+ dishService.getById(ids).getCategoryId() + "_1");
             return Result.success("Update status successfully.");
         } catch (Exception e) {
             log.info(e.getMessage().toString());

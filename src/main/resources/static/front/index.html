@@ -101,8 +101,8 @@
             </div>
           </div>
           <div class="divBottom">
-            <div><span class="spanMoney">￥</span>{{dialogFlavor.price/100}}</div>
-            <div @click="dialogFlavorAddCart">Add to the cart</div>
+            <div><span class="spanMoney">$</span>{{dialogFlavor.price/100}}</div>
+            <div @click="dialogFlavorAddCart">Add to cart</div>
           </div>
           <div class="divFlavorClose" @click="dialogFlavor.show = false">
             <img src="./images/close.png"/>
@@ -125,7 +125,7 @@
               <div class="divDesc">
                 <div class="name">{{item.name}}</div>
                 <div class="price">
-                  <span class="spanMoney">￥</span>{{item.amount}}</div>
+                  <span class="spanMoney">$</span>{{item.amount}}</div>
               </div>
               <div class="divNum">
                 <div class="divSubtract">
@@ -208,7 +208,7 @@
                   <div class="divAdd" v-if="setMealDialog.item.number">
                     <img src="./images/add.png" @click="addCart(setMealDialog.item)"/>
                   </div>
-                  <div class="addCart"  @click="addCart(setMealDialog.item)" v-if="!setMealDialog.item.number">add to the cart</div>
+                  <div class="addCart"  @click="addCart(setMealDialog.item)" v-if="!setMealDialog.item.number">Add to cart</div>
               </div>
           </div>
           <div class="detailsDialogClose" @click="setMealDialog.show = false">
