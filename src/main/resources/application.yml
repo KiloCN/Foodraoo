@@ -3,12 +3,34 @@ server:
 spring:
   application:
     name: foodaroo
-  datasource:
-    druid:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://42.193.219.12:3306/foodaroo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
-      username: root
-      password: wLfBobe!C_4o4azXKY84.MEwjtX
+  shardingsphere:
+    datasource:
+      names: master, slave
+      master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://42.193.219.12:3306/foodaroo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: wLfBobe!C_4o4azXKY84.MEwjtX
+      slave:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://139.9.76.182:3306/foodaroo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: qht*p2@wfPW
+    sharding:
+      default-data-source-name: master
+      rule:
+        master-slave:
+          data-source-name: dataSource
+          master-data-source-name: master
+          slave-data-source-names: slave
+          load-balance-algorithm-type: round_robin
+    props:
+      sql:
+        show: false
+  main:
+    allow-bean-definition-overriding: true
   redis:
     password: wLfBobe!C_4o4azXKY84.MEwjtX
     host: 42.193.219.12
