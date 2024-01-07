@@ -8,21 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82c621bb-2074-4dc5-bc1c-09c87c2614ba" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/node_modules/.bin/ecstatic" beforeDir="false" afterPath="$PROJECT_DIR$/static/node_modules/.bin/ecstatic" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/node_modules/.bin/he" beforeDir="false" afterPath="$PROJECT_DIR$/static/node_modules/.bin/he" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/node_modules/.bin/hs" beforeDir="false" afterPath="$PROJECT_DIR$/static/node_modules/.bin/hs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/node_modules/.bin/http-server" beforeDir="false" afterPath="$PROJECT_DIR$/static/node_modules/.bin/http-server" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/node_modules/.bin/mime" beforeDir="false" afterPath="$PROJECT_DIR$/static/node_modules/.bin/mime" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/node_modules/.bin/mkdirp" beforeDir="false" afterPath="$PROJECT_DIR$/static/node_modules/.bin/mkdirp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/node_modules/.bin/nanoid" beforeDir="false" afterPath="$PROJECT_DIR$/static/node_modules/.bin/nanoid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/node_modules/.bin/opener" beforeDir="false" afterPath="$PROJECT_DIR$/static/node_modules/.bin/opener" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/node_modules/.bin/parser" beforeDir="false" afterPath="$PROJECT_DIR$/static/node_modules/.bin/parser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/node_modules/http-proxy/.auto-changelog" beforeDir="false" afterPath="$PROJECT_DIR$/static/node_modules/http-proxy/.auto-changelog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,32 +77,32 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/kilo.cn/Desktop/Code/Personal_project/foodraoo/foodraoo-third-party/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.ignored.files",
-    "spring.configuration.checksum": "28562ef4c7e1fd4ff0941cbe96764c44",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kilo.cn/Desktop/Code/Personal_project/foodraoo/foodraoo-third-party/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.ignored.files&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;28562ef4c7e1fd4ff0941cbe96764c44&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -325,6 +312,7 @@
       <workItem from="1704614333598" duration="6000" />
       <workItem from="1704614407032" duration="207000" />
       <workItem from="1704614742429" duration="278000" />
+      <workItem from="1704615027683" duration="1006000" />
     </task>
     <task id="LOCAL-00001" summary="两个微服务基本完成，有bug，需要注册中心和Feign">
       <option name="closed" value="true" />
@@ -342,11 +330,30 @@
       <option name="project" value="LOCAL" />
       <updated>1703852515073</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Idea configuration refactoring solves the problem of chaotic parent-child structure of the project.">
+      <option name="closed" value="true" />
+      <created>1704615232134</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704615232134</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -355,7 +362,8 @@
     </ignored-roots>
     <MESSAGE value="两个微服务基本完成，有bug，需要注册中心和Feign" />
     <MESSAGE value="其他微服务大致正常，添加配送微服务，网关添加了，Oauth2还没搞" />
-    <option name="LAST_COMMIT_MESSAGE" value="其他微服务大致正常，添加配送微服务，网关添加了，Oauth2还没搞" />
+    <MESSAGE value="Idea configuration refactoring solves the problem of chaotic parent-child structure of the project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Idea configuration refactoring solves the problem of chaotic parent-child structure of the project." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
