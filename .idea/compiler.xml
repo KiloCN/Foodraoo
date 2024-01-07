@@ -12,9 +12,8 @@
         <module name="foodraoo-user" />
         <module name="foodraoo-gateway" />
         <module name="foodraoo-common" />
-        <module name="foodaroo" />
-        <module name="foodraoo-auth-server" />
         <module name="foodraoo-shopping-cart" />
+        <module name="foodraoo-auth-server" />
         <module name="foodraoo-cloud-storage" />
         <module name="foodraoo-dish" />
         <module name="feign-api" />
@@ -22,13 +21,15 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Foodraoo" target="1.8" />
+      <module name="foodraoo-shopping-cart.main" target="17" />
+      <module name="foodraoo-shopping-cart.test" target="17" />
+      <module name="gradle-project" target="17" />
+      <module name="gradle-project.main" target="17" />
+      <module name="gradle-project.test" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Foodraoo" options="-parameters" />
-      <module name="foodaroo" options="-parameters" />
       <module name="foodraoo-auth-server" options="-parameters" />
       <module name="foodraoo-cloud-storage" options="-parameters" />
       <module name="foodraoo-delivery" options="-parameters" />
