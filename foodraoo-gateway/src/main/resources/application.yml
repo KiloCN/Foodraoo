@@ -1,0 +1,90 @@
+spring:
+    application:
+        name: foodraoo-gateway
+    cloud:
+        nacos:
+            server-addr: 120.76.250.162:8848
+            discovery:
+                group: DEFAULT_GROUP
+            config:
+                namespace: c7243246-86dc-4caa-96b0-81fd999c3bc7
+                group: dev
+                refresh-enabled: true
+        gateway:
+            # CORS配置
+            globalcors:
+                cors-configurations:
+                    '[/**]':
+                        allowedOrigins: "*"
+                        allowedMethods:
+                            - GET
+                            - HEAD
+                            - POST
+                            - PUT
+                            - DELETE
+                            - TRACE
+                            - OPTIONS
+                            - PATCH
+                        allowedHeaders: "*"
+            routes:
+            - id: foodraoo-dish
+              uri: lb://foodraoo-dish
+              predicates:
+              - Path=/dish/**,/category/**,/setmeal/**
+            - id: foodraoo-order
+              uri: lb://foodraoo-order
+              predicates:
+                  - Path=/order/**
+            - id: foodraoo-shopping-cart
+              uri: lb://foodraoo-shopping-cart
+              predicates:
+                  - Path=/shoppingCart/**
+            - id: foodraoo-user
+              uri: lb://foodraoo-user
+              predicates:
+                  - Path=/addressBook/**,/employee/**,/user/**
+            - id: foodraoo-cloud-storage
+              uri: lb://foodraoo-cloud-storage
+              predicates:
+                  - Path=/common/**
+            - id: foodraoo-delivery
+              uri: lb://foodraoo-delivery
+              predicates:
+                - Path=/delivery/**
+            - id: foodraoo-front-end
+              uri: http://127.0.0.1:8080
+              predicates:
+                - Path=/front/**,/backend/**,/deliver/**
+            - id: foodraoo-front-login
+              uri: http://127.0.0.1:8080/front/page/login.html
+              predicates:
+                - Path=/
+
+    config:
+        import:
+        - optional:nacos:${spring.application.name}.yml
+
+
+
+# The following configuration is for nacos managed configuration information(foodraoo-gateway.yml)
+#server:
+#  port: 80
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://42.193.219.12:3306/foodaroo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+#    username: root
+#    password: wLfBobe!C_4o4azXKY84.MEwjtX
+#    type: com.alibaba.druid.pool.DruidDataSource
+#
+#  data:
+#    redis:
+#      host: 39.108.161.232
+#      port: 6378
+#      password: ME2fVgs3xC..
+#      database: 0
+#  cache:
+#    redis:
+#      time-to-live: 1800000
+#
+

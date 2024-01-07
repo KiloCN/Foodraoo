@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no,minimal-ui">
+
+    <link rel="icon" href="../../front/images/favicon.ico">
+    <!--不同屏幕尺寸根字体设置-->
+    <script src="../../front/js/base.js"></script>
+    <script src="../../front/api/config.js"></script>
+    <script src="./../api/delivery.js"></script>
+    <!--element-ui的样式-->
+    <link rel="stylesheet" href="../../backend/plugins/element-ui/index.css" />
+    <!--引入vant样式-->
+    <link rel="stylesheet" href="../../front/styles/vant.min.css" />
+    <!-- 引入样式  -->
+    <link rel="stylesheet" href="../../front/styles/index.css" />
+    <!--本页面内容的样式-->
+    <link rel="stylesheet" href="../../front/styles/address-edit.css" />
+    <title>Delivering</title>
+
+
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            serviceHost: "http://120.76.250.162:80/_AMapService",
+            //例如 ：serviceHost:'http://1.1.1.1:80/_AMapService',
+        };
+    </script>
+
+    <style type="text/css">
+        html,
+        body,
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+
+        #panel .amap-lib-driving {
+            border-radius: 4px;
+            overflow: hidden;
+        }
+    </style>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=b965850c5c4758726e4d45393f2b9569&plugin=AMap.Riding"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <!-- 开发环境版本,包含了有帮助的命令行警告 -->
+    <script src="../../backend/plugins/vue/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="../../backend/plugins/element-ui/index.js"></script>
+    <!-- 引入vant样式 -->
+    <script src="../../front/js/vant.min.js"></script>
+    <script src="../../front/js/common.js"></script>
+    <!-- 引入axios -->
+    <script src="../../backend/plugins/axios/axios.min.js"></script>
+    <script src="../../front/js/request.js"></script>
+</head>
+
+<body>
+    <div id="address_edit" class="app">
+        <div class="divHead">
+            <div class="divTitle">
+                <i class="el-icon-arrow-left"></i>Delivering
+            </div>
+        </div>
+        <div id="container"></div>
+
+        <script type="text/javascript">
+            // Vue + AJAX 请求数据
+            var v = new Vue({
+                el: '#container',
+                data() {
+                    return {
+                        form: {
+                            id: ''
+                        },
+                        customerPos: [],
+                        deliverPos: [],
+                        shopPos: [],
+                    };
+                },
+                mounted() {
+                    // 发起 AJAX 请求获取数据
+                    this.getData();
+                },
+                methods: {
+                    goBack() {
+                        history.go(-1)
+                    },
+                    async getData() {
+                        const url = location.search; //获取url中"?"符后的字串
+                        let theRequest = new Object();
+                        if (url.indexOf("?") != -1) {
+                            let str = url.substr(1);
+                            strs = str.split("&");
+                            for (let i = 0; i < strs.length; i++) {
+                                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                            }
+                        }
+                        this.id = theRequest.id;
+                        const res = await getPostions(this.id)
+                        if (res.code === 1) {
+                            console.log(res.data)
+                            this.customerPos = res.data.customerPos;
+                            this.deliverPos = res.data.deliverPos;
+                            this.shopPos = res.data.shopPos;
+
+
+                            var map = new AMap.Map("container", {
+                                resizeEnable: true,
+                                center: this.customerPos, // 默认地图中心点
+                                lang: "en",
+                                zoom: 13 // 地图显示的缩放级别
+                            });
+
+                            // 在地图上标记用户位置
+                            var markerUser = new AMap.Marker({
+                                position: this.customerPos,
+                                icon: new AMap.Icon({
+                                    image: './../img/customer.png',
+                                    size: new AMap.Size(42, 42),  //图标所处区域大小
+                                    imageSize: new AMap.Size(42, 42) //图标大小
+                                }),
+                                bubble: true,
+                                topWhenClick: true,
+                                label: 'customer',
+                                map: map
+                            });
+
+                            // 在地图上标记骑手位置
+                            var markerUser = new AMap.Marker({
+                                position: this.deliverPos,
+                                icon: new AMap.Icon({
+                                    image: './../img/deliver.png',
+                                    size: new AMap.Size(42, 42),  //图标所处区域大小
+                                    imageSize: new AMap.Size(42, 42) //图标大小
+                                }),
+                                bubble: true,
+                                topWhenClick: true,
+                                label: 'deliver',
+                                map: map
+                            });
+
+
+                            // 在地图上标记商家位置
+                            var markerUser = new AMap.Marker({
+                                position: this.shopPos,
+                                icon: new AMap.Icon({
+                                    image: './../img/shop.png',
+                                    size: new AMap.Size(42, 42),  //图标所处区域大小
+                                    imageSize: new AMap.Size(42, 42) //图标大小
+                                }),
+                                bubble: true,
+                                topWhenClick: true,
+                                label: 'shop',
+                                map: map
+                            });
+
+                            var ridingOption = {
+                                map: map,
+                                // panel: "panel",
+                                policy: 1,
+                                hideMarkers: true,
+                                isOutline: true,
+                                outlineColor: '#ffeeee',
+                                autoFitView: true
+                            }
+
+                            var riding = new AMap.Riding(ridingOption)
+
+                            //根据起终点坐标规划骑行路线
+                            riding.search(this.deliverPos, this.customerPos, function (status, result) {
+                                // result即是对应的公交路线数据信息，相关数据结构文档请参考  https://lbs.amap.com/api/javascript-api/reference/route-search#m_RidingResult
+                                if (status === 'complete') {
+                                    // log.success('骑行路线数据查询成功')
+                                } else {
+                                    // log.error('骑行路线数据查询失败' + result)
+                                }
+                            });
+                        } else {
+                            this.$message.error(res.msg)
+                        }
+                    }
+                }
+            });
+
+            // 在全局绑定点击事件处理程序
+            document.addEventListener('click', function (event) {
+                // 检查点击的元素是否是目标元素
+                if (event.target.matches('.el-icon-arrow-left')) {
+                    console.log("clicked");
+                    history.go(-1)
+                }
+            });
+
+        </script>
+    </div>
+
+</body>
+
+</html>

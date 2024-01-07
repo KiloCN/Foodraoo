@@ -1,0 +1,69 @@
+spring:
+    application:
+        name: foodraoo-cloud-storage
+    cloud:
+        nacos:
+            server-addr: 120.76.250.162:8848
+            discovery:
+                group: DEFAULT_GROUP
+            config:
+                namespace: 4c18eb6f-ba1f-4216-9042-c709af4b31c0
+                group: dev
+                refresh-enabled: true
+    config:
+        import:
+            - optional:nacos:${spring.application.name}.yml
+foodraoo:
+    img-path: static/images/dish_pic/
+#  abs-path: /Users/kilo.cn/Desktop/Code/Java/Foodraoo/Foodraoo/src/main/resources/static/backend/images/dish_pic/
+
+
+# The following configuration is for nacos managed configuration information(foodraoo-cloud-storage.yml)
+#server:
+#    port: 18084
+#spring:
+#    datasource:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://42.193.219.12:3306/foodaroo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+#        username: root
+#        password: wLfBobe!C_4o4azXKY84.MEwjtX
+#        type: com.alibaba.druid.pool.DruidDataSource
+#    data:
+#        redis:
+#            host: 39.108.161.232
+#            port: 6378
+#            password: ME2fVgs3xC..
+#            database: 0
+#    cache:
+#        redis:
+#            time-to-live: 1800000
+#
+#
+##    redis:
+##        password: wLfBobe!C_4o4azXKY84.MEwjtX
+##        host: 42.193.219.12
+##        port: 6379
+##        database: 0
+##
+##    cache:
+##        redis:
+##            time-to-live: 1800000
+##
+#feign:
+#    client:
+#        config:
+#            default:
+#                loger-level: BASIC
+#    httpclient:
+#        enabled: true
+#        max-connections: 200
+#        max-per-route-connections: 50
+#
+#mybatis-plus:
+#    configuration:
+#        map-underscore-to-camel-case: true
+#    #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    global-config:
+#        db-config:
+#            id-type: ASSIGN_ID
+#

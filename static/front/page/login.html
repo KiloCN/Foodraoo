@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>Foodaroo</title>
+    <link rel="icon" href="./../images/favicon.ico">
+    <!--不同屏幕尺寸根字体设置-->
+    <script src="./../js/base.js"></script>
+    <script src="./../api/config.js"></script>
+    <!--element-ui的样式-->
+    <link rel="stylesheet" href="../../backend/plugins/element-ui/index.css" />
+    <!--引入vant样式-->
+    <link rel="stylesheet" href="../styles/vant.min.css" />
+    <!-- 引入样式  -->
+    <link rel="stylesheet" href="../styles/index.css" />
+    <!--本页面内容的样式-->
+    <link rel="stylesheet" href="./../styles/login.css" />
+</head>
+
+<body>
+    <div id="login" v-loading="loading">
+        <div class="divHead">
+            <img src="./../images/logo-foodraoo.png" alt="" style="width: 155px; height: 44px;">
+        </div>
+        <div class="divTab">
+            <p style="font-size: 20px; color: #797777; width: 80%; text-align: center; margin-left: 10%; background-color: transparent;">Login</p>
+        </div>
+        <hr>
+        <div class="divContainer">
+            <el-input placeholder=" Please enter the phone number" v-model="form.phone" maxlength='20' /></el-input>
+            <div class="divSplit"></div>
+            <el-input placeholder=" please enter verification code" v-model="form.code" maxlength='20' /></el-input>
+            <span @click='getCode'>send verification code</span>
+        </div>
+        <div class="divMsg" v-if="msgFlag">The phone number input is incorrect, please re-enter</div>
+        <el-button type="primary" :class="{btnSubmit:1===1,btnNoPhone:!form.phone,btnPhone:form.phone}"
+            @click="btnLogin">Login</el-button>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="../../backend/plugins/vue/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="../../backend/plugins/element-ui/index.js"></script>
+    <!-- 引入vant样式 -->
+    <script src="./../js/vant.min.js"></script>
+    <!-- 引入axios -->
+    <script src="../../backend/plugins/axios/axios.min.js"></script>
+    <script src="./../js/request.js"></script>
+    <script src="./../api/login.js"></script>
+</body>
+
+<script>
+    new Vue({
+        el: "#login",
+        data() {
+            return {
+                form: {
+                    phone: '',
+                    code: ''
+                },
+                msgFlag: false,
+                loading: false
+            }
+        },
+        computed: {},
+        created() { },
+        mounted() { },
+        methods: {
+            async getCode() {
+                this.form.code = '';
+                const regex = /^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$/;
+                if (regex.test(this.form.phone)) {
+                    this.msgFlag = false;
+                    // 禁用按钮
+                    const btn = document.querySelector('span');
+                    btn.style.pointerEvents = 'none';
+                    // 开始倒计时
+                    this.countdown();
+                    const res = await sendMsgApi({ phone: this.form.phone });
+                    console.log(res)
+                    if(res.code == 0){
+                        this.$notify({ type: 'warning', message: res.msg });
+                    }
+                } else {
+                    this.msgFlag = true;
+                }
+            },
+            // 新增倒计时方法
+            countdown() {
+                const btn = document.querySelector('span');
+                btn.innerText = `${countdownSeconds}s`;
+                const countdownTimer = setInterval(() => {
+                    countdownSeconds--;
+                    if (countdownSeconds >= 0) {
+                        btn.innerText = `${countdownSeconds}s`;
+                    } else {
+                        clearInterval(countdownTimer);
+                        btn.innerText = 'Send Verification Code';
+                        btn.style.pointerEvents = 'auto'; // 启用按钮
+                        countdownSeconds = 60; // 重置倒计时秒数
+                    }
+                }, 1000);
+            },
+            async btnLogin() {
+                if (this.form.phone && this.form.code) {
+                    this.loading = true
+                    const res = await loginApi(this.form)
+                    this.loading = false
+                    if (res.code === 1) {
+                        sessionStorage.setItem("userPhone", this.form.phone)
+                        window.requestAnimationFrame(() => {
+                            window.location.href = '/front/index.html'
+                        })
+                    } else {
+                        this.$notify({ type: 'warning', message: res.msg });
+                    }
+                } else {
+                    this.$notify({ type: 'warning', message: 'Please enter the phone number' });
+                }
+            }
+        }
+    })
+</script>
+<p style="text-align: center">
+    <a href = "http://foodraoo.cn/backend" style="font-size: 10px; width: 80%; text-align: center; background-color: transparent;">
+        我是商家（商家端请使用PC端访问）
+    </a></p>
+
+<p class="disclaimer" style="font-size: 10px; color: #797777; width: 80%; text-align: center; margin-left: 10%; background-color: transparent;">
+    本网站仅为个人学习与演示之用，并非真实运营平台。未设立用户协议，本站符合中国法规相关要求，且致力于防范欺诈行为。<br>
+    © Foodraoo不会以任何理由要求付款或转账，请勿受骗上当。
+</p>
+</html>

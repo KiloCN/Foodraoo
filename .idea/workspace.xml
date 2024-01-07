@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="438f42e2-90f9-4f69-a49e-bf58c1eaab9e" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/feign-api/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/client/OrderClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/client/ShoppingCartClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/client/UserClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/config/DefaultFeignConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/AddressBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/DeliveryDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/Dish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/DishFlavor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/OrderDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/Setmeal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/SetmealDish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-api/src/main/java/cn/kilo/foodraoo/feign/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-auth-server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-auth-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-auth-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-auth-server/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-auth-server/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-auth-server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-auth-server/src/main/java/cn/kilo/foodraoo/authserver/FoodraooAuthServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-auth-server/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-auth-server/src/test/java/cn/kilo/foodraoo/authserver/FoodraooAuthServerApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/java/cn/kilo/foodraoo/cloudstorage/FoodraooCloudStorageApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/java/cn/kilo/foodraoo/cloudstorage/controller/CommonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/404-images/404-cloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/404-images/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/0062b61d-97bc-4d1e-856d-9d0b0b7f19fa.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/0ae291bf-e1b5-488d-96f7-c95c5059d9f5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/0b769bfd-564c-4f7f-80f4-7332b604ae9a.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/112c7628-3e27-471d-97bb-7194174d3659.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/1ac1b498-3d72-4ae4-9a81-11d305a0dd38.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/1c36ead2-b79f-4033-85ba-73f38338dcb3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/273fe07a-b64a-464a-bcb1-3e9c8f9ab824.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/2c8118c4-e606-4eed-b300-4d9abe3dc97b.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/30c6bad2-e90c-43fd-9c43-5930355f1b1f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/34fee0f8-baac-4626-b369-a6e9b5467d8d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/412e6033-f846-4c08-9a71-bc50ab103bcc.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/4414216e-2344-46d0-ae78-94260ac9a004.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/4524f31e-ee4e-45a8-94b0-eef05881e72d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/45396421-89a6-4936-8c87-6dd2b28f9d60.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/51e20dd4-2dc7-4ea9-828a-9eb31233b0d5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/528607bc-5d73-4b63-99dd-61c6dff61ccf.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/53f295ee-3a59-4265-b656-9a33e120ef6a.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/56cee3dd-a9e1-4478-b7e3-65cdbf279761.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/5b5fd481-1f76-46ae-b729-c663e90e4e0d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/62d0c6e8-0910-4dee-933e-9526ef6f5958.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/674dfc09-175a-4959-b30b-f324d014b66c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/6e5e8a26-5859-44b5-8102-31a75a14c8c3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/6f1463fe-6d78-4090-938e-07acf724068e.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/72dbc73b-db47-4ec4-8d3c-802786e99ef8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/79c404c0-0799-41b1-a2ea-bf2268fe376b.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/7bb02384-5802-4826-baed-f57760421ddc.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/7cb9c446-4f19-4da5-96dc-cc48eb5fbf4c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/806d1964-36ab-4f3b-ba5a-6129b3b5533c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/87eeaf6a-1512-484f-b961-b9f2146559c3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/8c36b26f-75b4-4f4d-90dd-51588859bd4c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/8ebdd2e6-7e02-4c18-a12e-e27d05c026ee.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/96eebde3-5276-4b0f-a281-e2950dadd5d8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/97df9626-5828-4a3c-b73d-bcbbb453a428.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/9c3b31c9-8b20-4a76-9c61-4d1e1ba3466f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/a01301ef-77eb-479e-8500-1ec72e1601f0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/a56ccdc5-3bf5-470a-b02d-0345edaa1d3f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/a6d46b01-16e8-4658-af6c-9935a613b06f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/ac866ae4-98ba-4ac4-badf-a0403ad8364e.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/b6e3c245-7228-406d-833b-7244d30b589b.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/b9ebfa5a-fb7c-4a62-924d-85712bde0383.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/bc463cee-dcff-436a-8de4-e34769d312f2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/bdcbe6ba-fe1c-4412-82d7-5e931290b9d7.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/be3ecee6-37ad-477c-a147-6c3a6312f7a0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/c58d38d5-2264-490a-82f2-8ff34832b300.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/cbcad200-009c-4a3b-b0af-abe8b43c3dbe.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/cd8f58fa-52c2-4c95-bba7-7e53ce67c852.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/d0fb8a51-807e-4ad8-9068-758bde59938f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/d1ede567-ae04-40ff-98dd-2d138cff25ff.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/d2aaaed8-9edf-4501-bfad-ba38a9e9b3dd.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/dc3efc91-d91c-4608-a11c-3cf25bca0fe0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/dc9b043d-00df-4ef2-8169-502f68d28857.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/de78ce09-6b30-4e13-987a-2a0d1b76b79c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/e2504424-e87c-44c5-a9d1-a911fbf78f44.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/e2c1e2c9-24d2-4582-b970-1e9cd894bea2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/e5627729-76e3-462d-b72a-98a3c1d15a0d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/e8925567-8021-43cf-9155-a1ae8a29b6b6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/dish_pic/fc1b1a1d-5f0a-4e3a-aea1-c376fbcc07fb.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/icons/btn_back@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/icons/btn_clean@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/icons/btn_close@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/icons/icon_index.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/icons/icon_upload@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/icons/jine_m-2@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/icons/renshu@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/icons/xiangmujine@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/img_brand01@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/img_denglu_bj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/login/login-l.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/login/login-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/login/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/main/resources/static/images/noImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-cloud-storage/src/test/java/cn/kilo/foodraoo/cloudstorage/FoodraooCloudStorageApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/src/main/java/cn/kilo/foodraoo/common/BaseContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/src/main/java/cn/kilo/foodraoo/common/FoodraooMetaObjectHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/src/main/java/cn/kilo/foodraoo/common/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/src/main/java/cn/kilo/foodraoo/common/JacksonObjectMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/src/main/java/cn/kilo/foodraoo/common/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/src/main/java/cn/kilo/foodraoo/common/ThreadLocalUserId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/src/main/java/cn/kilo/foodraoo/common/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/src/main/java/cn/kilo/foodraoo/common/exception/FileRelatedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/src/main/java/cn/kilo/foodraoo/common/utils/StringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-common/src/main/java/cn/kilo/foodraoo/common/utils/ValidateCodeUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/src/main/java/cn/kilo/foodraoo/delivery/FoodraooDeliveryApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/src/main/java/cn/kilo/foodraoo/delivery/controller/DeliveryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/src/main/java/cn/kilo/foodraoo/delivery/controller/filter/LoginCheckFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-delivery/src/test/java/cn/kilo/foodraoo/delivery/FoodraooDeliveryApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/FoodraooDishApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/controller/DishController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/controller/SetmealController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/controller/filter/LoginCheckFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/dto/DishDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/dto/SetmealDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/mapper/DishFlavorMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/mapper/DishMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/mapper/SetmealDishMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/mapper/SetmealMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/service/DishFlavorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/service/DishService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/service/SetmealDishService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/service/SetmealService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/service/impl/DishFlavorServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/service/impl/DishServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/service/impl/SetmealDishServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/service/impl/SetmealServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-dish/src/test/java/cn/kilo/foodraoo/dish/FoodraooDishApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-gateway/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-gateway/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-gateway/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-gateway/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-gateway/src/main/java/cn/kilo/foodraoo/gateway/FoodraooGatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-gateway/src/test/java/cn/kilo/foodraoo/gateway/FoodraooGatewayApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/FoodraooOrderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/config/FeignClientConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/config/FeignConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/controller/OrderDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/controller/filter/LoginCheckFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/mapper/OrderDetailMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/service/OrderDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/service/impl/OrderDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/java/cn/kilo/foodraoo/order/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-order/src/test/java/cn/kilo/foodraoo/order/FoodraooOrderApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/main/java/cn/kilo/foodraoo/shoppingcart/FoodraooShoppingCartApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/main/java/cn/kilo/foodraoo/shoppingcart/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/main/java/cn/kilo/foodraoo/shoppingcart/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/main/java/cn/kilo/foodraoo/shoppingcart/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/main/java/cn/kilo/foodraoo/shoppingcart/controller/ShoppingCartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/main/java/cn/kilo/foodraoo/shoppingcart/controller/filter/LoginCheckFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/main/java/cn/kilo/foodraoo/shoppingcart/mapper/ShoppingCartMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/main/java/cn/kilo/foodraoo/shoppingcart/service/ShoppingCartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/main/java/cn/kilo/foodraoo/shoppingcart/service/impl/ShoppingCartServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-shopping-cart/src/test/java/cn/kilo/foodraoo/shoppingcart/FoodraooShoppingCartApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-third-party/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-third-party/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-third-party/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-third-party/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-third-party/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-third-party/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-third-party/src/main/java/cn/kilo/foodraoo/thirdparty/FoodraooThirdPartyApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-third-party/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-third-party/src/test/java/cn/kilo/foodraoo/thirdparty/FoodraooThirdPartyApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/FoodraooUserApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/controller/AddressBookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/controller/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/controller/filter/LoginCheckFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/mapper/AddressBookMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/mapper/EmployeeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/service/AddressBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/service/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/service/impl/AddressBookServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/java/cn/kilo/foodraoo/user/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodraoo-user/src/test/java/cn/kilo/foodraoo/user/FoodraooUserApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/api/category.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/api/combo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/api/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/api/food.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/api/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/api/member.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/api/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/404-images/404-cloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/404-images/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/0062b61d-97bc-4d1e-856d-9d0b0b7f19fa.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/0ae291bf-e1b5-488d-96f7-c95c5059d9f5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/0b769bfd-564c-4f7f-80f4-7332b604ae9a.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/112c7628-3e27-471d-97bb-7194174d3659.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/1ac1b498-3d72-4ae4-9a81-11d305a0dd38.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/1c36ead2-b79f-4033-85ba-73f38338dcb3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/273fe07a-b64a-464a-bcb1-3e9c8f9ab824.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/2c8118c4-e606-4eed-b300-4d9abe3dc97b.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/30c6bad2-e90c-43fd-9c43-5930355f1b1f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/34fee0f8-baac-4626-b369-a6e9b5467d8d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/412e6033-f846-4c08-9a71-bc50ab103bcc.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/4414216e-2344-46d0-ae78-94260ac9a004.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/4524f31e-ee4e-45a8-94b0-eef05881e72d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/45396421-89a6-4936-8c87-6dd2b28f9d60.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/51e20dd4-2dc7-4ea9-828a-9eb31233b0d5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/528607bc-5d73-4b63-99dd-61c6dff61ccf.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/53f295ee-3a59-4265-b656-9a33e120ef6a.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/56cee3dd-a9e1-4478-b7e3-65cdbf279761.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/5b5fd481-1f76-46ae-b729-c663e90e4e0d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/62d0c6e8-0910-4dee-933e-9526ef6f5958.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/674dfc09-175a-4959-b30b-f324d014b66c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/6e5e8a26-5859-44b5-8102-31a75a14c8c3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/6f1463fe-6d78-4090-938e-07acf724068e.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/72dbc73b-db47-4ec4-8d3c-802786e99ef8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/79c404c0-0799-41b1-a2ea-bf2268fe376b.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/7bb02384-5802-4826-baed-f57760421ddc.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/7cb9c446-4f19-4da5-96dc-cc48eb5fbf4c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/806d1964-36ab-4f3b-ba5a-6129b3b5533c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/87eeaf6a-1512-484f-b961-b9f2146559c3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/8c36b26f-75b4-4f4d-90dd-51588859bd4c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/8ebdd2e6-7e02-4c18-a12e-e27d05c026ee.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/96eebde3-5276-4b0f-a281-e2950dadd5d8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/97df9626-5828-4a3c-b73d-bcbbb453a428.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/9c3b31c9-8b20-4a76-9c61-4d1e1ba3466f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/a01301ef-77eb-479e-8500-1ec72e1601f0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/a56ccdc5-3bf5-470a-b02d-0345edaa1d3f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/a6d46b01-16e8-4658-af6c-9935a613b06f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/ac866ae4-98ba-4ac4-badf-a0403ad8364e.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/b6e3c245-7228-406d-833b-7244d30b589b.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/b9ebfa5a-fb7c-4a62-924d-85712bde0383.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/bc463cee-dcff-436a-8de4-e34769d312f2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/bdcbe6ba-fe1c-4412-82d7-5e931290b9d7.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/be3ecee6-37ad-477c-a147-6c3a6312f7a0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/c58d38d5-2264-490a-82f2-8ff34832b300.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/cbcad200-009c-4a3b-b0af-abe8b43c3dbe.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/cd8f58fa-52c2-4c95-bba7-7e53ce67c852.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/d0fb8a51-807e-4ad8-9068-758bde59938f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/d1ede567-ae04-40ff-98dd-2d138cff25ff.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/d2aaaed8-9edf-4501-bfad-ba38a9e9b3dd.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/dc3efc91-d91c-4608-a11c-3cf25bca0fe0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/dc9b043d-00df-4ef2-8169-502f68d28857.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/de78ce09-6b30-4e13-987a-2a0d1b76b79c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/e2504424-e87c-44c5-a9d1-a911fbf78f44.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/e2c1e2c9-24d2-4582-b970-1e9cd894bea2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/e5627729-76e3-462d-b72a-98a3c1d15a0d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/e8925567-8021-43cf-9155-a1ae8a29b6b6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/dish_pic/fc1b1a1d-5f0a-4e3a-aea1-c376fbcc07fb.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/icons/btn_back@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/icons/btn_clean@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/icons/btn_close@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/icons/icon_index.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/icons/icon_upload@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/icons/jine_m-2@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/icons/renshu@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/icons/xiangmujine@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/img_brand01@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/img_denglu_bj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/login/login-l.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/login/login-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/login/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/images/noImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/js/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/js/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/page/category/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/page/combo/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/page/combo/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/page/food/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/page/food/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/page/login/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/page/member/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/page/member/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/page/order/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/plugins/axios/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/plugins/element-ui/fonts/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/plugins/element-ui/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/plugins/element-ui/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/plugins/element-ui/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/plugins/vue/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/fonts/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/icon/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/icon/demo_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/icon/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/icon/iconfont.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/icon/iconfont.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/icon/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/icon/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/icon/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/backend/styles/page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/deliver/api/delivery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/deliver/img/customer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/deliver/img/deliver.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/deliver/img/shop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/deliver/page/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/deliver/page/select-pos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/api/address.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/api/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/api/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/api/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/api/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/fonts/DIN-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/fonts/DIN-Medium.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/fonts/PingFangSC-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/fonts/PingFangSC-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/fonts/PingFangSC-Semibold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/boy1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/boy2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/boy3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/boy4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/girl1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/girl2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/girl3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/girl4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/girl5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/girl6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/avatar/girlold.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/cart_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/checked_false.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/checked_true.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/demo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/demo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/demo3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/demo4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/female.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/headPage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/location.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/locations.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/logo-foodraoo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/logo-login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/mainBg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/male.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/money.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/noImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/no_order.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/no_wifi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/orders.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/subtract.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/time.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/images/women.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/js/base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/js/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/js/vant.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/page/add-order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/page/address-edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/page/address.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/page/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/page/no-wify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/page/order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/page/pay-success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/page/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/add-order.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/address-edit.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/address.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/no-wify.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/order.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/pay-success.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/user.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/front/styles/vant.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Foodraoo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/leetcode/statistics.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_1_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_76.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_6_1_10_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_89_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_89_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_89_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_89_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_89_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_89_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_89_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_12_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_2_4_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_4_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_17_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_17_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_api_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_common_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_entry_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_execute_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_merge_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_optimize_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_parse_common_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_parse_mysql_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_parse_oracle_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_parse_postgresql_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_parse_spi_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_parse_sqlserver_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_rewrite_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_core_route_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_jdbc_core_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_jdbc_spring_boot_starter_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shardingsphere_sharding_transaction_core_4_0_0_RC1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_71.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_71.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_71.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_22_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_indy_2_4_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_4_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_4_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_36.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_36.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_36.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_7_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_7_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_7_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_30.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/foodaroo.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodaroo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/FoodarooApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/common/BaseContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/common/FoodraooMetaObjectHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/common/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/common/JacksonObjectMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/common/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/common/ThreadLocalUserId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/common/exception/BusinessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/common/exception/FileRelatedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/config/MybatisPlusConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/config/RedisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/config/WebMvcConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/AddressBookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/CategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/CommonController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/DishController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/EmployeeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/OrderDetailController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/SetmealController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/ShoppingCartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/controller/filter/LoginCheckFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/dto/DishDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/dto/SetmealDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/AddressBookMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/CategoryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/DishFlavorMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/DishMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/EmployeeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/OrderDetailMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/OrderMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/SetmealDishMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/SetmealMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/ShoppingCartMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/AddressBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/Dish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/DishFlavor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/OrderDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/Orders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/Setmeal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/SetmealDish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/ShoppingCart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/pojo/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/AddressBookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/CategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/DishFlavorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/DishService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/EmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/OrderDetailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/SetmealDishService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/SetmealService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/ShoppingCartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/AddressBookServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/CategoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/DishFlavorServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/DishServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/EmployeeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/OrderDetailServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/OrderServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/SetmealDishServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/SetmealServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/ShoppingCartServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/utils/StringUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/kilo/foodaroo/utils/ValidateCodeUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/api/category.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/api/combo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/api/food.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/api/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/api/member.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/api/order.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/404-images/404-cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/404-images/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/0062b61d-97bc-4d1e-856d-9d0b0b7f19fa.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/0ae291bf-e1b5-488d-96f7-c95c5059d9f5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/0b769bfd-564c-4f7f-80f4-7332b604ae9a.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/112c7628-3e27-471d-97bb-7194174d3659.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/1ac1b498-3d72-4ae4-9a81-11d305a0dd38.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/1c36ead2-b79f-4033-85ba-73f38338dcb3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/273fe07a-b64a-464a-bcb1-3e9c8f9ab824.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/2c8118c4-e606-4eed-b300-4d9abe3dc97b.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/30c6bad2-e90c-43fd-9c43-5930355f1b1f.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/34fee0f8-baac-4626-b369-a6e9b5467d8d.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/412e6033-f846-4c08-9a71-bc50ab103bcc.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/4414216e-2344-46d0-ae78-94260ac9a004.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/4524f31e-ee4e-45a8-94b0-eef05881e72d.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/45396421-89a6-4936-8c87-6dd2b28f9d60.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/51e20dd4-2dc7-4ea9-828a-9eb31233b0d5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/528607bc-5d73-4b63-99dd-61c6dff61ccf.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/53f295ee-3a59-4265-b656-9a33e120ef6a.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/56cee3dd-a9e1-4478-b7e3-65cdbf279761.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/5b5fd481-1f76-46ae-b729-c663e90e4e0d.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/62d0c6e8-0910-4dee-933e-9526ef6f5958.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/674dfc09-175a-4959-b30b-f324d014b66c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/6e5e8a26-5859-44b5-8102-31a75a14c8c3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/6f1463fe-6d78-4090-938e-07acf724068e.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/72dbc73b-db47-4ec4-8d3c-802786e99ef8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/79c404c0-0799-41b1-a2ea-bf2268fe376b.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/7bb02384-5802-4826-baed-f57760421ddc.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/7cb9c446-4f19-4da5-96dc-cc48eb5fbf4c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/806d1964-36ab-4f3b-ba5a-6129b3b5533c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/87eeaf6a-1512-484f-b961-b9f2146559c3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/8c36b26f-75b4-4f4d-90dd-51588859bd4c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/8ebdd2e6-7e02-4c18-a12e-e27d05c026ee.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/96eebde3-5276-4b0f-a281-e2950dadd5d8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/97df9626-5828-4a3c-b73d-bcbbb453a428.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/9c3b31c9-8b20-4a76-9c61-4d1e1ba3466f.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/a01301ef-77eb-479e-8500-1ec72e1601f0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/a56ccdc5-3bf5-470a-b02d-0345edaa1d3f.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/a6d46b01-16e8-4658-af6c-9935a613b06f.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/ac866ae4-98ba-4ac4-badf-a0403ad8364e.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/b6e3c245-7228-406d-833b-7244d30b589b.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/b9ebfa5a-fb7c-4a62-924d-85712bde0383.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/bc463cee-dcff-436a-8de4-e34769d312f2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/bdcbe6ba-fe1c-4412-82d7-5e931290b9d7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/be3ecee6-37ad-477c-a147-6c3a6312f7a0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/c58d38d5-2264-490a-82f2-8ff34832b300.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/cbcad200-009c-4a3b-b0af-abe8b43c3dbe.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/cd8f58fa-52c2-4c95-bba7-7e53ce67c852.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/d0fb8a51-807e-4ad8-9068-758bde59938f.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/d1ede567-ae04-40ff-98dd-2d138cff25ff.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/d2aaaed8-9edf-4501-bfad-ba38a9e9b3dd.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/dc3efc91-d91c-4608-a11c-3cf25bca0fe0.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/dc9b043d-00df-4ef2-8169-502f68d28857.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/de78ce09-6b30-4e13-987a-2a0d1b76b79c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/e2504424-e87c-44c5-a9d1-a911fbf78f44.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/e2c1e2c9-24d2-4582-b970-1e9cd894bea2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/e5627729-76e3-462d-b72a-98a3c1d15a0d.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/e8925567-8021-43cf-9155-a1ae8a29b6b6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/dish_pic/fc1b1a1d-5f0a-4e3a-aea1-c376fbcc07fb.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/icons/btn_back@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/icons/btn_clean@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/icons/btn_close@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/icons/icon_index.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/icons/icon_upload@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/icons/jine_m-2@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/icons/renshu@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/icons/xiangmujine@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/img_brand01@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/img_denglu_bj.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/login/login-l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/login/login-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/login/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/images/noImg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/js/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/js/request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/js/validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/page/category/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/page/combo/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/page/combo/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/page/food/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/page/food/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/page/login/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/page/member/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/page/member/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/page/order/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/plugins/axios/axios.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/plugins/element-ui/fonts/element-icons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/plugins/element-ui/fonts/element-icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/plugins/element-ui/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/plugins/element-ui/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/plugins/vue/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/common.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/fonts/element-icons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/fonts/element-icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/icon/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/icon/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/icon/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/icon/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/icon/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/icon/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/icon/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/icon/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/backend/styles/page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/api/address.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/api/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/api/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/api/order.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/fonts/DIN-Bold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/fonts/DIN-Medium.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/fonts/PingFangSC-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/fonts/PingFangSC-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/fonts/PingFangSC-Semibold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/boy1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/boy2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/boy3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/boy4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/girl1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/girl2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/girl3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/girl4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/girl5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/girl6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/avatar/girlold.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/cart_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/checked_false.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/checked_true.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/demo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/demo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/demo3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/demo4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/female.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/headPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/locations.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/logo-login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/mainBg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/male.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/money.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/noImg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/no_order.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/no_wifi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/orders.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/subtract.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/images/women.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/js/base.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/js/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/js/request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/js/vant.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/page/add-order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/page/address-edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/page/address.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/page/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/page/no-wify.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/page/order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/page/pay-success.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/page/user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/add-order.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/address-edit.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/address.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/no-wify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/order.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/pay-success.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/user.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/front/styles/vant.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/kilo/FoodarooApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2acM7ZYghtxf6n1988MFxnirH0P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/kilo.cn/Downloads/Temp/foodraoo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "12089e1923a4a91cc466aa4dc7eaa175",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.FoodraooAuthServerApplication">
+    <configuration name="FoodraooAuthServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="foodraoo-auth-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kilo.foodraoo.authserver.FoodraooAuthServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FoodraooCloudStorageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="foodraoo-cloud-storage" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kilo.foodraoo.cloudstorage.FoodraooCloudStorageApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FoodraooDeliveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="foodraoo-delivery" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kilo.foodraoo.delivery.FoodraooDeliveryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FoodraooDishApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="foodraoo-dish" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kilo.foodraoo.dish.FoodraooDishApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FoodraooGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="foodraoo-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kilo.foodraoo.gateway.FoodraooGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FoodraooOrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="foodraoo-order" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kilo.foodraoo.order.FoodraooOrderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FoodraooShoppingCartApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="foodraoo-shopping-cart" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kilo.foodraoo.shoppingcart.FoodraooShoppingCartApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FoodraooThirdPartyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="foodraoo-third-party" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kilo.foodraoo.thirdparty.FoodraooThirdPartyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FoodraooUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="foodraoo-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kilo.foodraoo.user.FoodraooUserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="438f42e2-90f9-4f69-a49e-bf58c1eaab9e" name="更改" comment="" />
+      <created>1704613248259</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704613248259</updated>
+      <workItem from="1704613249423" duration="96000" />
+      <workItem from="1704613363400" duration="124000" />
+      <workItem from="1704613492907" duration="416000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

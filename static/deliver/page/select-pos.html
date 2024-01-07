@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no,minimal-ui">
+
+    <link rel="icon" href="../../front/images/favicon.ico">
+    <!--不同屏幕尺寸根字体设置-->
+    <script src="../../front/js/base.js"></script>
+    <script src="../../front/api/config.js"></script>
+    <script src="./../api/delivery.js"></script>
+    <!--element-ui的样式-->
+    <link rel="stylesheet" href="../../backend/plugins/element-ui/index.css" />
+    <!--引入vant样式-->
+    <link rel="stylesheet" href="../../front/styles/vant.min.css" />
+    <!-- 引入样式  -->
+    <link rel="stylesheet" href="../../front/styles/index.css" />
+    <!--本页面内容的样式-->
+    <link rel="stylesheet" href="../../front/styles/address-edit.css" />
+    <title>Select Address</title>
+
+
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            serviceHost: "http://120.76.250.162:80/_AMapService",
+            //例如 ：serviceHost:'http://1.1.1.1:80/_AMapService',
+        };
+    </script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+            font-size: 13px;
+        }
+
+        .map {
+            height: 100%;
+            width: 60%;
+            float: left;
+        }
+
+        #right {
+            color: #444;
+            background-color: #f8f8f8;
+            width: 40%;
+            float: left;
+            height: 100%;
+        }
+
+        #start,
+        #stop,
+        #right input {
+            margin: 4px;
+            margin-left: 15px;
+        }
+
+        .title {
+            width: 100%;
+            background-color: #dadada
+        }
+
+        button {
+            border: solid 1px;
+            margin-left: 15px;
+            background-color: #dadafa;
+        }
+
+        .c {
+            font-weight: 600;
+            padding-left: 15px;
+            padding-top: 4px;
+        }
+
+        #lnglat,
+        #address,
+        #nearestJunction,
+        #nearestRoad,
+        #nearestPOI,
+        .title {
+            padding-left: 15px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=b965850c5c4758726e4d45393f2b9569&plugin=AMap.Riding"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <!-- 开发环境版本,包含了有帮助的命令行警告 -->
+    <script src="../../backend/plugins/vue/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="../../backend/plugins/element-ui/index.js"></script>
+    <!-- 引入vant样式 -->
+    <script src="../../front/js/vant.min.js"></script>
+    <script src="../../front/js/common.js"></script>
+    <!-- 引入axios -->
+    <script src="../../backend/plugins/axios/axios.min.js"></script>
+    <script src="../../front/js/request.js"></script>
+</head>
+
+<body>
+    <div id="address_edit" class="app">
+        <div class="divHead">
+            <div class="divTitle">
+                <i class="el-icon-arrow-left" @click="goBack"></i>Select Address
+            </div>
+        </div>
+        <div id="container" class="map" tabindex="0" style="height: 90%;"></div>
+        <div id='right'>
+            <div>
+                <div class='title'>Selection mode</div>
+                <input type='radio' name='mode' value='dragMap' checked>Drag and drop map mode</input>
+                </br>
+                <input type='radio' name='mode' value='dragMarker'>Drag and drop Marker mode</input>
+            </div>
+            <div>
+                <div class='title'>Location result</div>
+                <div class='c'>Latitude and longitude:</div>
+                <div id='lnglat'></div>
+                <div class='c'>Address:</div>
+                <div id='address'></div>
+                <button id='save'>Save Address</button>
+            </div>
+        </div>
+        <script type="text/javascript"
+            src='https://webapi.amap.com/maps?v=1.4.15&key=b965850c5c4758726e4d45393f2b9569&plugin=AMap.ToolBar'></script>
+        <!--引入UI组件库（1.1版本） -->
+        <script src="https://webapi.amap.com/ui/1.1/main.js"></script>
+
+        <script type="text/javascript">
+            var position;
+            var address;
+            let v = new Vue({
+                el: "#address_edit",
+                data() {
+                    return {
+                    }
+                },
+                computed: {},
+                created() {
+                },
+                mounted() {
+                },
+                methods: {
+                    goBack() {
+                        window.location.replace('./../../front/page/address-edit.html');
+                    }
+                }
+            })
+
+
+            AMap.plugin('AMap.CitySearch', function () {
+                var citySearch = new AMap.CitySearch()
+                citySearch.getLocalCity(function (status, result) {
+                    if (status === 'complete' && result.info === 'OK') {
+                        cityName = result.city;
+                        localStorage.setItem("provinceName", result.province);
+                        localStorage.setItem("cityCode", result.adcode);
+                        localStorage.setItem("cityName", result.city);
+                    }
+                })
+            })
+
+
+            AMapUI.loadUI(['misc/PositionPicker'], function (PositionPicker) {
+                var map = new AMap.Map('container', {
+                    zoom: 16,
+                    scrollWheel: false,
+                    lang: 'en'
+                })
+
+
+                map.setCity(cityName);
+
+                var positionPicker = new PositionPicker({
+                    mode: 'dragMap',
+                    map: map
+                });
+
+                positionPicker.on('success', function (positionResult) {
+                    position = positionResult.position;
+                    address = positionResult.address;
+                    document.getElementById('lnglat').innerHTML = positionResult.position;
+                    document.getElementById('address').innerHTML = positionResult.address;
+                });
+                positionPicker.on('fail', function (positionResult) {
+                    document.getElementById('lnglat').innerHTML = ' ';
+                    document.getElementById('address').innerHTML = ' ';
+                });
+
+
+                var onModeChange = function (e) {
+                    positionPicker.setMode(e.target.value)
+                }
+                var startButton = document.getElementById('start');
+                var stopButton = document.getElementById('stop');
+                var saveButton = document.getElementById('save');
+                var dragMapMode = document.getElementsByName('mode')[0];
+                var dragMarkerMode = document.getElementsByName('mode')[1];
+
+                saveButton.addEventListener('click', function () {
+                    localStorage.setItem("position", position);
+                    localStorage.setItem("address", address);
+                    window.requestAnimationFrame(() => {
+                        window.location.href = 'http://foodraoo.cn/front/page/address-edit.html'
+                    })
+                })
+                dragMapMode.addEventListener('change', onModeChange)
+                dragMarkerMode.addEventListener('change', onModeChange);
+                positionPicker.start();
+                map.panBy(0, 1);
+
+                map.addControl(new AMap.ToolBar({
+                    liteStyle: true
+                }))
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>

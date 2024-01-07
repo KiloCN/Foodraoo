@@ -1,0 +1,73 @@
+spring:
+    application:
+        name: foodraoo-user
+    cloud:
+        nacos:
+            server-addr: 120.76.250.162:8848
+            discovery:
+                group: DEFAULT_GROUP
+            config:
+                namespace: e83929b3-63bb-4ab5-b563-0d21656053b4
+                group: dev
+                refresh-enabled: true
+    config:
+        import:
+            - optional:nacos:${spring.application.name}.yml
+    session:
+        store-type: redis
+    servlet:
+        sission:
+            timeout: 30m
+# corsConfiguration.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5173/"));
+
+
+# The following configuration is for nacos managed configuration information(foodraoo-user.yml)
+#server:
+#    port: 18082
+#spring:
+#    datasource:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://42.193.219.12:3306/foodaroo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+#        username: root
+#        password: wLfBobe!C_4o4azXKY84.MEwjtX
+#        type: com.alibaba.druid.pool.DruidDataSource
+#    data:
+#        redis:
+#            host: 39.108.161.232
+#            port: 6378
+#            password: ME2fVgs3xC..
+#            database: 0
+#    cache:
+#        redis:
+#            time-to-live: 1800000
+#
+#
+##    redis:
+##        password: wLfBobe!C_4o4azXKY84.MEwjtX
+##        host: 42.193.219.12
+##        port: 6379
+##        database: 0
+##
+##    cache:
+##        redis:
+##            time-to-live: 1800000
+##
+#feign:
+#    client:
+#        config:
+#            default:
+#                loger-level: BASIC
+#    httpclient:
+#        enabled: true
+#        max-connections: 200
+#        max-per-route-connections: 50
+#
+#mybatis-plus:
+#    configuration:
+#        map-underscore-to-camel-case: true
+#    #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    global-config:
+#        db-config:
+#            id-type: ASSIGN_ID
+#
+

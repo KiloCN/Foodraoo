@@ -7,12 +7,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="foodraoo-order" />
+        <module name="foodraoo-third-party" />
+        <module name="foodraoo-user" />
+        <module name="foodraoo-gateway" />
+        <module name="foodraoo-common" />
         <module name="foodaroo" />
-        <module name="Foodraoo" />
+        <module name="foodraoo-auth-server" />
+        <module name="foodraoo-shopping-cart" />
+        <module name="foodraoo-cloud-storage" />
+        <module name="foodraoo-dish" />
+        <module name="feign-api" />
+        <module name="foodraoo-delivery" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="foodaroo" target="1.8" />
       <module name="Foodraoo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -20,6 +29,15 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Foodraoo" options="-parameters" />
       <module name="foodaroo" options="-parameters" />
+      <module name="foodraoo-auth-server" options="-parameters" />
+      <module name="foodraoo-cloud-storage" options="-parameters" />
+      <module name="foodraoo-delivery" options="-parameters" />
+      <module name="foodraoo-dish" options="-parameters" />
+      <module name="foodraoo-gateway" options="-parameters" />
+      <module name="foodraoo-order" options="-parameters" />
+      <module name="foodraoo-shopping-cart" options="-parameters" />
+      <module name="foodraoo-third-party" options="-parameters" />
+      <module name="foodraoo-user" options="-parameters" />
     </option>
   </component>
 </project>
