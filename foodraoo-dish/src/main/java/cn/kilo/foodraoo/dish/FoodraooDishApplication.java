@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ServletComponentScan(basePackages = "cn.kilo.foodraoo.dish.controller.filter")
 @EnableRedisHttpSession //Enable Redis Session
 @EnableTransactionManagement
-//@EnableCaching
+@EnableCaching
 @EnableDiscoveryClient
 @EnableFeignClients
 public class FoodraooDishApplication {

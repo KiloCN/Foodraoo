@@ -9,7 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="82c621bb-2074-4dc5-bc1c-09c87c2614ba" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/FoodraooDishApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/FoodraooDishApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/controller/DishController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/controller/SetmealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodraoo-dish/src/main/java/cn/kilo/foodraoo/dish/controller/SetmealController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +101,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.ignored.files&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;28562ef4c7e1fd4ff0941cbe96764c44&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9e59fc8c8ed4dc6c4a8987795d812642&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -312,7 +314,13 @@
       <workItem from="1704614333598" duration="6000" />
       <workItem from="1704614407032" duration="207000" />
       <workItem from="1704614742429" duration="278000" />
-      <workItem from="1704615027683" duration="1006000" />
+      <workItem from="1704615027683" duration="1548000" />
+      <workItem from="1704618040574" duration="17000" />
+      <workItem from="1704934798617" duration="42000" />
+      <workItem from="1704934866312" duration="29000" />
+      <workItem from="1704936509897" duration="611000" />
+      <workItem from="1704982290561" duration="1031000" />
+      <workItem from="1704983439905" duration="301000" />
     </task>
     <task id="LOCAL-00001" summary="两个微服务基本完成，有bug，需要注册中心和Feign">
       <option name="closed" value="true" />
@@ -338,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704615232134</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modify the readme.md">
+      <option name="closed" value="true" />
+      <created>1704616079561</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704616079561</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +379,8 @@
     <MESSAGE value="两个微服务基本完成，有bug，需要注册中心和Feign" />
     <MESSAGE value="其他微服务大致正常，添加配送微服务，网关添加了，Oauth2还没搞" />
     <MESSAGE value="Idea configuration refactoring solves the problem of chaotic parent-child structure of the project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Idea configuration refactoring solves the problem of chaotic parent-child structure of the project." />
+    <MESSAGE value="Modify the readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify the readme.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
